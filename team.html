@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Équipe – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+  <style>
+    /* ── Team Card ─────────────────────────────── */
+    .team-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo), border-color 0.3s;
+      will-change: transform;
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--grad-card);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .team-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(0,229,255,0.3);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .team-card:hover::before { opacity: 1; }
+
+    /* ── Photo wrapper ─────────────────────────── */
+    .team-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #0a1020 0%, #0d1830 100%);
+    }
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s var(--ease-expo), filter 0.4s;
+      filter: grayscale(0.1) contrast(1.05);
+    }
+    .team-card:hover .team-photo-wrap img {
+      transform: scale(1.07);
+      filter: grayscale(0) contrast(1.08);
+    }
+    .team-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(13,17,23,0.95) 0%, rgba(13,17,23,0.3) 70%, transparent 100%);
+      pointer-events: none;
+    }
+    .team-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -60%; left: -60%;
+      width: 60%; height: 160%;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%);
+      transform: skewX(-20deg);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.6s;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .team-card:hover .team-photo-wrap::before {
+      opacity: 1;
+      transform: translateX(350%) skewX(-20deg);
+    }
+
+    /* Role badge on photo */
+    .team-role-badge {
+      position: absolute;
+      bottom: 14px; left: 14px; right: 14px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* ── Social Links ─────────────────────────── */
+    .team-social { display: flex; gap: 8px; }
+    .team-social a {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s var(--ease-expo);
+    }
+    .team-social a:hover {
+      color: var(--primary);
+      border-color: rgba(0,229,255,0.5);
+      background: rgba(0,229,255,0.07);
+      transform: translateY(-2px);
+    }
+
+    /* ── Founder highlight ────────────────────── */
+    .team-card.founder {
+      border-color: rgba(0,229,255,0.18);
+      background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, #0D1117 50%);
+    }
+    .team-card.founder:hover {
+      border-color: rgba(0,229,255,0.45);
+      box-shadow: 0 0 0 1px rgba(0,229,255,0.3), 0 16px 48px rgba(0,0,0,0.6), 0 0 40px rgba(0,229,255,0.12);
+    }
+
+    /* ── Placeholder card ─────────────────────── */
+    .team-placeholder {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .team-placeholder:hover {
+      border-color: rgba(0,229,255,0.25);
+      background: rgba(0,229,255,0.02);
+    }
+
+    /* ── Stats bar ────────────────────────────── */
+    .team-stat {
+      padding: 20px 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s var(--ease-expo);
+    }
+    .team-stat:hover {
+      border-color: rgba(0,229,255,0.3);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="team" data-i18n-title="team_h1_1">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 pb-24">
+
+  <!-- ── HERO ── -->
+  <section class="max-w-7xl mx-auto px-6 mb-20">
+    <div class="reveal-up">
+      <p class="text-primary font-mono text-sm mb-3" data-i18n="team_label">// Notre Équipe</p>
+      <h1 class="font-syne text-5xl md:text-6xl font-black mb-6 leading-tight">
+        <span data-i18n="team_h1_1">Les Esprits</span><br/>
+        <span class="text-gradient" data-i18n="team_h1_2">Derrière EMIASN</span>
+      </h1>
+      <p class="text-muted text-lg max-w-2xl leading-relaxed" data-i18n="team_p">30+ experts passionnés, formés dans les meilleures institutions mondiales et unis par une vision commune : bâtir l'avenir de l'IA en Afrique.</p>
+    </div>
+    <!-- Stats -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 stagger-grid">
+      <div class="team-stat"><div class="font-syne text-3xl font-black text-primary counter" data-target="30" data-suffix="+">30+</div><div class="text-muted text-sm mt-1">Experts IA</div></div>
+      <div class="team-stat"><div class="font-syne text-3xl font-black text-primary counter" data-target="8" data-suffix="">8</div><div class="text-muted text-sm mt-1">Nationalités</div></div>
+      <div class="team-stat"><div class="font-syne text-3xl font-black text-primary counter" data-target="15" data-suffix="+">15+</div><div class="text-muted text-sm mt-1">Ans d'exp. cumulés</div></div>
+      <div class="team-stat"><div class="font-syne text-3xl font-black text-primary counter" data-target="5" data-suffix="">5</div><div class="text-muted text-sm mt-1">Pays</div></div>
+    </div>
+  </section>
+
+  <!-- ── LEADERSHIP ── -->
+  <section class="max-w-7xl mx-auto px-6 mb-20">
+    <p class="text-primary font-mono text-sm mb-8 reveal-up">// Direction &amp; Leadership</p>
+
+    <!-- Organigramme hiérarchie -->
+    <div class="mb-10 reveal-up">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-muted font-mono">
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card">
+          <i class="fas fa-user-tie text-primary text-xs"></i>
+          <span class="text-white font-semibold">CEO</span>
+        </div>
+        <i class="fas fa-arrow-down sm:fa-arrow-right text-border text-xs rotate-0 sm:rotate-0"></i>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary">
+          <i class="fas fa-star text-xs"></i>
+          <span class="font-semibold">Senior Tech Lead</span>
+          <span class="text-muted">(Bras droit)</span>
+        </div>
+        <i class="fas fa-arrow-down sm:fa-arrow-right text-border text-xs"></i>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400">
+          <i class="fas fa-code-branch text-xs"></i>
+          <span class="font-semibold">Tech Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
+
+      <!-- CEO – placeholder -->
+      <div class="team-placeholder flex flex-col items-center justify-center gap-5 p-10 min-h-[420px] text-center">
+        <div class="relative">
+          <div class="w-24 h-24 rounded-2xl bg-white/5 border border-dashed border-border flex items-center justify-center">
+            <i class="fas fa-user-tie text-muted text-3xl"></i>
+          </div>
+          <div class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-card border border-primary/30 flex items-center justify-center">
+            <i class="fas fa-crown text-primary text-xs"></i>
+          </div>
+        </div>
+        <div>
+          <p class="font-syne font-bold text-lg text-white/60 mb-1">CEO</p>
+          <p class="text-muted text-sm">Directeur Général</p>
+          <p class="text-muted/50 text-xs mt-3 font-mono">— À venir —</p>
+        </div>
+      </div>
+
+      <!-- Ibrahima Ndao – Senior Tech Lead (real photo) -->
+      <div class="team-card founder">
+        <div class="team-photo-wrap">
+          <picture>
+            <source srcset="images/Ibrahima_opt.webp" type="image/webp"/>
+            <img src="images/Ibrahima_opt.jpg" alt="Ibrahima Ndao – Senior Tech Lead EMIASN" loading="eager"/>
+          </picture>
+          <div class="team-role-badge">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/30 backdrop-blur-sm text-primary text-xs font-mono font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Senior Tech Lead
+            </span>
+          </div>
+        </div>
+        <div class="relative z-10 p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-syne font-bold text-xl text-white leading-tight">Ibrahima Ndao</h3>
+              <p class="text-primary text-sm font-medium mt-0.5">Senior Tech Lead · Bras droit du CEO</p>
+            </div>
+            <div class="shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center" title="Bras droit du CEO">
+              <i class="fas fa-star text-primary text-xs"></i>
+            </div>
+          </div>
+          <!-- Rang hiérarchique -->
+          <div class="mb-3 flex items-center gap-2">
+            <span class="text-xs text-muted font-mono">#2 dans la hiérarchie</span>
+            <span class="flex gap-0.5">
+              <i class="fas fa-circle text-primary text-[6px]"></i>
+              <i class="fas fa-circle text-primary text-[6px]"></i>
+              <i class="fas fa-circle text-muted/30 text-[6px]"></i>
+            </span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-4">Bras droit du CEO et pilier technique d'EMIASN. Ibrahima supervise l'architecture des solutions IA, coordonne les équipes d'ingénierie et garantit l'excellence technique de chaque livrable.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2.5 py-1 rounded-md bg-primary/8 border border-primary/15 text-primary text-xs font-mono">Machine Learning</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">Deep Learning</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">TensorFlow</span>
+          </div>
+          <div class="team-social">
+            <a href="https://www.linkedin.com/in/ibrahima-ndao" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:ndaoibrahima037@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mamadou Moustapha Diallo – Tech Lead -->
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <!-- Placeholder gradient en attendant la photo -->
+          <div class="w-full h-full bg-gradient-to-br from-blue-500/15 via-card to-primary/8 flex items-center justify-center">
+            <div class="w-24 h-24 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+              <span class="font-syne font-black text-3xl text-blue-400">MD</span>
+            </div>
+          </div>
+          <div class="team-role-badge">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 backdrop-blur-sm text-blue-400 text-xs font-mono font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>Tech Lead
+            </span>
+          </div>
+        </div>
+        <div class="relative z-10 p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-syne font-bold text-xl text-white leading-tight">Mamadou Moustapha Diallo</h3>
+              <p class="text-blue-400 text-sm font-medium mt-0.5">Tech Lead · Ingénierie IA</p>
+            </div>
+            <div class="shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center" title="Tech Lead">
+              <i class="fas fa-code-branch text-blue-400 text-xs"></i>
+            </div>
+          </div>
+          <!-- Rang hiérarchique -->
+          <div class="mb-3 flex items-center gap-2">
+            <span class="text-xs text-muted font-mono">#3 dans la hiérarchie</span>
+            <span class="flex gap-0.5">
+              <i class="fas fa-circle text-primary text-[6px]"></i>
+              <i class="fas fa-circle text-blue-400 text-[6px]"></i>
+              <i class="fas fa-circle text-muted/30 text-[6px]"></i>
+            </span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-4">Tech Lead confirmé chez EMIASN, Mamadou Moustapha pilote les projets d'ingénierie IA de bout en bout. Son expertise technique et sa capacité à fédérer les équipes en font un acteur clé de la réussite des livrables.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2.5 py-1 rounded-md bg-blue-500/8 border border-blue-500/15 text-blue-400 text-xs font-mono">Tech Lead</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">IA Engineering</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/5 border border-border text-muted text-xs font-mono">MLOps</span>
+          </div>
+          <div class="team-social">
+            <a href="https://www.linkedin.com/in/mamadou-moustapha-diallo" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:contact@emiasn.sn" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EXPERTS GRID ── -->
+  <section class="max-w-7xl mx-auto px-6 mb-20">
+    <div class="flex items-center justify-between mb-8 reveal-up">
+      <p class="text-primary font-mono text-sm">// Experts &amp; Ingénieurs</p>
+      <a href="careers.html" class="footer-link text-muted text-sm hover:text-primary transition-colors flex items-center gap-2">Rejoindre l'équipe <i class="fas fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 stagger-grid">
+
+      <!-- Expert 1 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-primary/10 via-card to-blue-500/10 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center"><i class="fas fa-robot text-primary text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 backdrop-blur-sm text-blue-400 text-xs font-mono">ML Engineer</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Amadou Diallo</h3>
+          <p class="text-blue-400/80 text-xs font-mono mb-3">Machine Learning Engineer</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">PyTorch</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">MLflow</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="GitHub"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 2 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-purple-500/10 via-card to-primary/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center"><i class="fas fa-brain text-purple-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 backdrop-blur-sm text-purple-400 text-xs font-mono">NLP Specialist</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Fatou Sarr</h3>
+          <p class="text-purple-400/80 text-xs font-mono mb-3">NLP &amp; Language Models</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">HuggingFace</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">BERT</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="Email"><i class="fas fa-envelope"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 3 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-green-500/10 via-card to-primary/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center"><i class="fas fa-eye text-green-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-500/15 border border-green-500/30 backdrop-blur-sm text-green-400 text-xs font-mono">CV Engineer</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Moussa Coulibaly</h3>
+          <p class="text-green-400/80 text-xs font-mono mb-3">Computer Vision Expert</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">OpenCV</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">YOLO</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="GitHub"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 4 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-orange-500/10 via-card to-secondary/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center"><i class="fas fa-server text-orange-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-orange-500/15 border border-orange-500/30 backdrop-blur-sm text-orange-400 text-xs font-mono">MLOps Engineer</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Cheikh Diop</h3>
+          <p class="text-orange-400/80 text-xs font-mono mb-3">MLOps &amp; Cloud Architect</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">Docker</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">AWS</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="GitHub"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 5 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-cyan-500/10 via-card to-primary/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center"><i class="fas fa-chart-line text-cyan-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 backdrop-blur-sm text-cyan-400 text-xs font-mono">Data Scientist</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Aissatou Bah</h3>
+          <p class="text-cyan-400/80 text-xs font-mono mb-3">Data Scientist &amp; Analyst</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">Pandas</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">Seaborn</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="Email"><i class="fas fa-envelope"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 6 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-pink-500/10 via-card to-secondary/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center"><i class="fas fa-network-wired text-pink-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-pink-500/15 border border-pink-500/30 backdrop-blur-sm text-pink-400 text-xs font-mono">DL Researcher</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Oumar Traoré</h3>
+          <p class="text-pink-400/80 text-xs font-mono mb-3">Deep Learning Researcher</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">Keras</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">Research</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="GitHub"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Expert 7 -->
+      <div class="team-card group">
+        <div class="team-photo-wrap">
+          <div class="w-full h-full bg-gradient-to-br from-indigo-500/10 via-card to-blue-500/5 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center"><i class="fas fa-code text-indigo-400 text-2xl"></i></div>
+          </div>
+          <div class="team-role-badge"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 backdrop-blur-sm text-indigo-400 text-xs font-mono">Backend Engineer</span></div>
+        </div>
+        <div class="relative z-10 p-5">
+          <h3 class="font-syne font-bold text-base text-white mb-0.5">Mariama Camara</h3>
+          <p class="text-indigo-400/80 text-xs font-mono mb-3">Backend &amp; API Developer</p>
+          <div class="flex flex-wrap gap-1.5 mb-4"><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">FastAPI</span><span class="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">PostgreSQL</span></div>
+          <div class="team-social"><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" title="GitHub"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+
+      <!-- Join us card -->
+      <div class="team-placeholder flex flex-col items-center justify-center gap-4 p-8 text-center min-h-[300px]">
+        <div class="w-16 h-16 rounded-2xl bg-primary/8 border border-primary/20 flex items-center justify-center">
+          <i class="fas fa-user-plus text-primary text-xl"></i>
+        </div>
+        <div>
+          <p class="font-syne font-bold text-base text-white/60 mb-1">Et vous ?</p>
+          <p class="text-muted text-sm max-w-[160px] mx-auto">Rejoignez notre équipe de talents IA</p>
+        </div>
+        <a href="careers.html" class="btn-primary px-5 py-2.5 bg-primary text-dark text-sm font-bold rounded-xl">Voir les offres <i class="fas fa-arrow-right ml-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CULTURE ── -->
+  <section class="max-w-7xl mx-auto px-6 mb-20">
+    <div class="reveal glass-card rounded-3xl border border-border bg-card overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="p-10 md:p-14">
+          <p class="text-primary font-mono text-sm mb-4">// Notre Culture</p>
+          <h2 class="font-syne text-3xl md:text-4xl font-black mb-5">Un environnement<br/><span class="text-gradient">qui vous inspire</span></h2>
+          <p class="text-muted leading-relaxed mb-8">Chez EMIASN, nous croyons que les grandes idées naissent dans un cadre qui valorise la diversité, l'autonomie et l'apprentissage continu.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-graduation-cap text-primary text-sm"></i></div>
+              <div><div class="text-sm font-semibold text-white">Formation continue</div><div class="text-muted text-xs">Certifications, hackathons, conférences</div></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0"><i class="fas fa-earth-africa text-green-400 text-sm"></i></div>
+              <div><div class="text-sm font-semibold text-white">Impact réel en Afrique</div><div class="text-muted text-xs">Projets à impact social et économique</div></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0"><i class="fas fa-people-group text-purple-400 text-sm"></i></div>
+              <div><div class="text-sm font-semibold text-white">Équipe multiculturelle</div><div class="text-muted text-xs">8 nationalités, inclusion totale</div></div>
+            </div>
+          </div>
+          <a href="careers.html" class="btn-primary inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-primary text-dark text-sm font-bold rounded-xl">Rejoindre l'aventure <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="p-10 md:p-14 bg-white/[0.02] border-l border-border flex flex-col gap-6 justify-center">
+          <div>
+            <div class="flex items-center justify-between mb-2"><span class="text-sm text-muted">Satisfaction équipe</span><span class="text-primary font-mono font-bold text-sm">96%</span></div>
+            <div class="w-full h-1.5 bg-border rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width:96%"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2"><span class="text-sm text-muted">Rétention des talents</span><span class="text-primary font-mono font-bold text-sm">88%</span></div>
+            <div class="w-full h-1.5 bg-border rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width:88%"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2"><span class="text-sm text-muted">Projets livrés dans les délais</span><span class="text-primary font-mono font-bold text-sm">100%</span></div>
+            <div class="w-full h-1.5 bg-border rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width:100%"></div></div>
+          </div>
+          <!-- Quote -->
+          <div class="mt-2 p-6 rounded-2xl bg-primary/5 border border-primary/15">
+            <p class="text-white/80 text-sm leading-relaxed italic mb-3">"Notre mission est de prouver que l'Afrique peut mener la révolution IA mondiale, pas seulement y participer."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+                <picture>
+                  <source srcset="images/team_ibrahima.webp" type="image/webp"/>
+                  <img src="images/team_ibrahima.jpg" alt="Ibrahima Ndao" class="w-full h-full object-cover"/>
+                </picture>
+              </div>
+              <div><p class="text-white text-xs font-semibold">Ibrahima Ndao</p><p class="text-muted text-xs">Senior Tech Lead, EMIASN</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="max-w-7xl mx-auto px-6">
+    <div class="reveal relative rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-r from-primary/8 via-blue-500/8 to-purple-500/5 p-12 text-center">
+      <div class="absolute inset-0 grid-bg opacity-10"></div>
+      <div class="orb orb-cyan" style="top:50%;left:30%;transform:translate(-50%,-50%);width:300px;height:300px;opacity:0.12;"></div>
+      <div class="relative z-10">
+        <span class="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-mono mb-5">Nous recrutons</span>
+        <h2 class="font-syne text-3xl md:text-4xl font-black mb-4">Votre talent a sa place<br/><span class="text-gradient">chez EMIASN</span></h2>
+        <p class="text-muted mb-8 max-w-xl mx-auto">Rejoignez les pionniers de l'IA en Afrique de l'Ouest. Postes ouverts en Data Science, ML Engineering, NLP et plus.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="careers.html" class="btn-primary btn-glow shine px-8 py-4 bg-primary text-dark font-bold rounded-xl text-sm">Voir toutes les offres <i class="fas fa-arrow-right ml-2"></i></a>
+          <a href="contact.html" class="btn-outline px-8 py-4 border border-border text-white font-semibold rounded-xl text-sm hover:border-primary/50 hover:bg-white/5 transition-all">Candidature spontanée</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

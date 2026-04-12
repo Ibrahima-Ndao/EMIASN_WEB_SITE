@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partenaires – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="partners">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="part_label">// Partenaires</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="part_h1_1">Nos Partenaires</span><br/><span data-i18n="part_h1_2">Stratégiques</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="part_p">Un réseau d'alliances solides pour les meilleures solutions IA.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6 stagger-grid">
+    <div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">🎓</div><h3 class="font-syne font-bold text-xl mb-2">Universités Partenaires</h3><p class="text-muted text-sm mb-4">ESP Dakar, UCAD, École Polytechnique Paris, MIT Media Lab</p><span class="text-primary text-sm font-mono">R&D & Recherche Fondamentale</span></div>
+    <div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">☁️</div><h3 class="font-syne font-bold text-xl mb-2">Cloud & Infrastructure</h3><p class="text-muted text-sm mb-4">Google Cloud Partner, AWS Advanced Partner, Microsoft Azure</p><span class="text-primary text-sm font-mono">Infrastructure & MLOps</span></div>
+    <div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">🌍</div><h3 class="font-syne font-bold text-xl mb-2">Organisations</h3><p class="text-muted text-sm mb-4">Smart Africa Alliance, GSMA, Banque Africaine de Développement</p><span class="text-primary text-sm font-mono">Impact & Développement</span></div>
+  </div>
+</main>
+</body>
+</html>

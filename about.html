@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À Propos – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="about" data-i18n-title="about_h1_1">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="about_label">// À Propos de Nous</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="about_h1_1">Notre Histoire,</span><br/>
+      <span data-i18n="about_h1_2">Notre Mission</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl leading-relaxed" data-i18n="about_p">Fondée à Dakar, EMIASN est née d'une vision claire : faire de l'Afrique de l'Ouest un acteur majeur de l'intelligence artificielle mondiale.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6 mb-20 stagger-grid">
+    <div class="service-card p-8 rounded-2xl border border-border bg-card">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5"><i class="fas fa-bullseye text-primary text-xl"></i></div>
+      <h3 class="font-syne font-bold text-xl mb-3" data-i18n="mission_title">Notre Mission</h3>
+      <p class="text-muted text-sm leading-relaxed" data-i18n="mission_desc">Développer et déployer des solutions IA innovantes qui transforment les opérations des grandes entreprises au Sénégal et à l'international.</p>
+    </div>
+    <div class="service-card p-8 rounded-2xl border border-border bg-card">
+      <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5"><i class="fas fa-telescope text-blue-400 text-xl"></i></div>
+      <h3 class="font-syne font-bold text-xl mb-3" data-i18n="vision_title">Notre Vision</h3>
+      <p class="text-muted text-sm leading-relaxed" data-i18n="vision_desc">Devenir le leader panafricain de l'IA d'ici 2030, en exportant notre expertise vers les marchés européens et asiatiques.</p>
+    </div>
+    <div class="service-card p-8 rounded-2xl border border-border bg-card">
+      <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-5"><i class="fas fa-gem text-secondary text-xl"></i></div>
+      <h3 class="font-syne font-bold text-xl mb-3" data-i18n="values_title">Nos Valeurs</h3>
+      <p class="text-muted text-sm leading-relaxed" data-i18n="values_desc">Excellence technique, éthique de l'IA, innovation continue, collaboration inclusive et engagement envers nos clients.</p>
+    </div>
+  </div>
+  <div class="mb-20">
+    <h2 class="font-syne text-3xl font-black mb-10 reveal-up" data-i18n="journey_title">Notre Parcours</h2>
+    <div class="relative border-l-2 border-border pl-10 space-y-10">
+      <div class="relative"><div class="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-primary border-4 border-dark"></div><div class="text-primary font-mono text-sm mb-1">2019</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="timeline_2019_title">Fondation d'EMIASN</h3><p class="text-muted text-sm max-w-lg" data-i18n="timeline_2019_desc">Création à Dakar par une équipe de data scientists et ingénieurs IA formés en Europe et aux États-Unis.</p></div>
+      <div class="relative"><div class="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-primary border-4 border-dark"></div><div class="text-primary font-mono text-sm mb-1">2020</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="timeline_2020_title">Premiers Grands Comptes</h3><p class="text-muted text-sm max-w-lg" data-i18n="timeline_2020_desc">Signature des premiers contrats dans les secteurs bancaire et télécoms au Sénégal.</p></div>
+      <div class="relative"><div class="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-primary border-4 border-dark"></div><div class="text-primary font-mono text-sm mb-1">2021</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="timeline_2021_title">Expansion Régionale</h3><p class="text-muted text-sm max-w-lg" data-i18n="timeline_2021_desc">Ouverture de bureaux à Abidjan et Bamako. Extension de l'équipe à 20 experts IA.</p></div>
+      <div class="relative"><div class="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-primary border-4 border-dark"></div><div class="text-primary font-mono text-sm mb-1">2023</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="timeline_2023_title">Reconnaissance Internationale</h3><p class="text-muted text-sm max-w-lg" data-i18n="timeline_2023_desc">Prix de l'Innovation Numérique Africaine. Partenariats avec universités européennes pour la R&D.</p></div>
+      <div class="relative"><div class="absolute -left-[2.85rem] w-5 h-5 rounded-full bg-secondary border-4 border-dark"></div><div class="text-secondary font-mono text-sm mb-1" data-i18n="timeline_2024_date">2024 – Aujourd'hui</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="timeline_2024_title">Leader IA Africain</h3><p class="text-muted text-sm max-w-lg" data-i18n="timeline_2024_desc">30+ experts, 50+ projets livrés, présence dans 5 pays. En route vers l'expansion européenne.</p></div>
+    </div>
+  </div>
+  <div class="glass-card reveal rounded-2xl border border-border bg-card p-10">
+    <h2 class="font-syne text-3xl font-black mb-8" data-i18n="culture_title">Notre Culture d'Innovation</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-muted leading-relaxed mb-4" data-i18n="culture_p1">Chez EMIASN, la diversité est notre plus grande force. Nos équipes multiculturelles apportent des perspectives uniques.</p>
+        <p class="text-muted leading-relaxed" data-i18n="culture_p2">Nous investissons continuellement dans la formation, organisant des hackathons, formations certifiantes et partenariats avec les meilleures universités.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4"><div class="text-3xl font-syne font-black text-primary">95%</div><div class="text-sm text-muted" data-i18n="stat_satisfaction">Satisfaction client</div></div>
+        <div class="w-full bg-border rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width:95%"></div></div>
+        <div class="flex items-center gap-4"><div class="text-3xl font-syne font-black text-primary">88%</div><div class="text-sm text-muted" data-i18n="stat_retention">Rétention des talents</div></div>
+        <div class="w-full bg-border rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width:88%"></div></div>
+        <div class="flex items-center gap-4"><div class="text-3xl font-syne font-black text-primary">100%</div><div class="text-sm text-muted" data-i18n="stat_delivery">Projets livrés dans les délais</div></div>
+        <div class="w-full bg-border rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width:100%"></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

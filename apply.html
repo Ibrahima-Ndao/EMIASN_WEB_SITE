@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candidature – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="apply">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-3xl mx-auto px-6 pb-24">
+  <a href="careers.html" class="flex items-center gap-2 text-muted hover:text-primary transition-colors text-sm mb-8">
+    <i class="fas fa-arrow-left"></i> <span data-i18n="apply_back">Retour aux offres</span>
+  </a>
+  <div class="mb-10 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="apply_label">// Candidature</p>
+    <h1 class="font-syne text-4xl font-black mb-3" data-i18n="apply_h1">Postuler chez EMIASN</h1>
+    <p class="text-muted" data-i18n="apply_p">Notre équipe RH vous contactera sous 72h.</p>
+  </div>
+  <div class="glass-card p-8 rounded-2xl border border-border bg-card">
+    <div class="space-y-6">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div><label class="block text-sm font-medium mb-2" data-i18n="apply_fname">Prénom *</label><input type="text" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Votre prénom"/></div>
+        <div><label class="block text-sm font-medium mb-2" data-i18n="apply_lname">Nom *</label><input type="text" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Votre nom"/></div>
+      </div>
+      <div><label class="block text-sm font-medium mb-2" data-i18n="apply_email">Email *</label><input type="email" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="votre@email.com"/></div>
+      <div><label class="block text-sm font-medium mb-2" data-i18n="apply_phone">Téléphone</label><input type="tel" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="+221 77 000 00 00"/></div>
+      <div><label class="block text-sm font-medium mb-2" data-i18n="apply_position">Poste souhaité *</label>
+        <select class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm">
+          <option value="">Sélectionner un poste</option>
+          <option>Stagiaire Data Science</option><option>Senior ML Engineer</option><option>NLP Research Scientist</option><option>Data Engineer</option>
+        </select>
+      </div>
+      <div><label class="block text-sm font-medium mb-2" data-i18n="apply_level">Niveau d'études *</label>
+        <select class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm">
+          <option value="" data-i18n="select_level">Sélectionner</option><option>Bac+4</option><option>Bac+5 (Master)</option><option>Doctorat</option>
+        </select>
+      </div>
+      <div><label class="block text-sm font-medium mb-2" data-i18n="apply_letter">Lettre de motivation *</label><textarea rows="5" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm resize-none" placeholder="Décrivez votre motivation et vos compétences (Python, NumPy, Pandas, etc.)..."></textarea></div>
+      <div>
+        <label class="block text-sm font-medium mb-3" data-i18n="apply_skills">Compétences techniques *</label>
+        <div class="grid grid-cols-3 gap-2">
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Python</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> NumPy</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Pandas</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Matplotlib</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Scikit-Learn</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> TensorFlow</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Keras</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> Seaborn</label>
+          <label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input type="checkbox" class="accent-primary"/> PyTorch</label>
+        </div>
+      </div>
+      <button onclick="showToast(t('apply_toast'))" class="w-full py-4 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all text-sm">
+        <span data-i18n="apply_btn">Soumettre ma Candidature</span> <i class="fas fa-paper-plane ml-2"></i>
+      </button>
+    </div>
+  </div>
+</main>
+</body>
+</html>

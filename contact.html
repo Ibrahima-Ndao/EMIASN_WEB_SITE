@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="contact">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="contact_label">// Contact</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="contact_h1_1">Travaillons</span><br/>
+      <span data-i18n="contact_h1_2">Ensemble</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="contact_p">Une question, un projet, un partenariat ? Notre équipe est disponible.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-12">
+    <div class="space-y-5">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-2" data-i18n="fname">Prénom</label>
+          <input id="contact-fname" type="text" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Votre prénom"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2" data-i18n="lname">Nom</label>
+          <input id="contact-lname" type="text" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Votre nom"/>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" data-i18n="email_pro">Email professionnel</label>
+        <input id="contact-email" type="email" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="vous@entreprise.com"/>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" data-i18n="company">Entreprise</label>
+        <input id="contact-company" type="text" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" placeholder="Nom de votre entreprise"/>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" data-i18n="subject">Sujet</label>
+        <select id="contact-subject" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white focus:outline-none focus:border-primary transition-colors text-sm">
+          <option data-i18n="subj_project">Projet IA</option>
+          <option data-i18n="subj_partner">Partenariat</option>
+          <option data-i18n="subj_recruit">Recrutement</option>
+          <option data-i18n="subj_press">Presse</option>
+          <option data-i18n="subj_other">Autre</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" data-i18n="message_label">Message</label>
+        <textarea id="contact-message" rows="5" class="w-full px-4 py-3 rounded-xl border border-border bg-card text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm resize-none" placeholder="Décrivez votre projet..."></textarea>
+      </div>
+      <button id="contact-submit-btn" onclick="sendContactForm()" class="w-full py-4 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all flex items-center justify-center gap-2 disabled:cursor-not-allowed">
+        <span id="contact-btn-text" data-i18n="send_btn">Envoyer le Message</span>
+        <i id="contact-btn-icon" class="fas fa-paper-plane"></i>
+      </button>
+      <!-- Direct contact options -->
+      <div class="flex gap-3 pt-1">
+        <a href="mailto:ndaoibrahima037@gmail.com" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-border text-muted hover:text-primary hover:border-primary/50 transition-all text-sm">
+          <i class="fas fa-envelope text-primary"></i> ndaoibrahima037@gmail.com
+        </a>
+      </div>
+      <a href="tel:+221781565039" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-border text-muted hover:text-primary hover:border-primary/50 transition-all text-sm">
+        <i class="fas fa-phone text-primary"></i> +221 78 156 50 39
+      </a>
+    </div>
+    <div class="space-y-5">
+      <div class="p-6 rounded-2xl border border-border bg-card">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-map-marker-alt text-primary"></i></div>
+          <div>
+            <h4 class="font-semibold mb-1" data-i18n="hq_title">Siège Social</h4>
+            <p class="text-muted text-sm" data-i18n="hq_addr" data-i18n-html>Villa N°7308, SICAP Mermoz 2<br/>Dakar, Sénégal</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border border-border bg-card">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-envelope text-primary"></i></div>
+          <div>
+            <h4 class="font-semibold mb-1" data-i18n="email_title">Email</h4>
+            <a href="mailto:ndaoibrahima037@gmail.com" class="text-muted text-sm hover:text-primary transition-colors block">ndaoibrahima037@gmail.com</a>
+            <a href="mailto:ndaoibrahima037@gmail.com" class="text-muted text-sm hover:text-primary transition-colors block">recrutement@emiasn.sn</a>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border border-border bg-card">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-phone text-primary"></i></div>
+          <div>
+            <h4 class="font-semibold mb-1" data-i18n="phone_title">Téléphone</h4>
+            <a href="tel:+221781565039" class="text-muted text-sm hover:text-primary transition-colors block">+221 78 156 50 39</a>
+            <a href="tel:+221781565039" class="text-muted text-sm hover:text-primary transition-colors block">+221 78 156 50 39</a>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border border-border bg-card">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-clock text-primary"></i></div>
+          <div>
+            <h4 class="font-semibold mb-1" data-i18n="hours_title">Horaires</h4>
+            <p class="text-muted text-sm" data-i18n="hours_weekday">Lun – Ven : 08h00 – 18h00</p>
+            <p class="text-muted text-sm" data-i18n="hours_sat">Sam : 09h00 – 13h00</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border border-border bg-card">
+        <h4 class="font-semibold mb-4" data-i18n="offices_title">Nos Bureaux</h4>
+        <div class="space-y-3 text-sm text-muted">
+          <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-primary"></div>Dakar, Sénégal (Siège)</div>
+          <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-primary/50"></div>Abidjan, Côte d'Ivoire</div>
+          <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-primary/50"></div>Bamako, Mali</div>
+          <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-primary/30"></div>Paris, France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

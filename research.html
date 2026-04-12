@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recherche – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="research">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="res_label">// R&D</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="res_h1_1">Innovation &</span><br/><span data-i18n="res_h1_2">Recherche</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="res_p">Notre laboratoire repousse les frontières de l'IA appliquée au contexte africain.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="p-8 rounded-2xl border border-border bg-card">
+      <h3 class="font-syne font-bold text-2xl mb-6" data-i18n="res_axes">Axes de Recherche</h3>
+      <div class="space-y-5">
+        <div class="flex gap-4"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div><div><h4 class="font-semibold mb-1">IA pour les Langues Africaines</h4><p class="text-muted text-sm">Modèles NLP adaptés au Wolof, Bambara, Dioula et autres langues locales.</p></div></div>
+        <div class="flex gap-4"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div><div><h4 class="font-semibold mb-1">IA Frugale pour Mobiles</h4><p class="text-muted text-sm">Optimisation de modèles ML pour appareils à faible consommation en zones rurales.</p></div></div>
+        <div class="flex gap-4"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div><div><h4 class="font-semibold mb-1">Prévision Climatique Sahélienne</h4><p class="text-muted text-sm">Modèles spécialisés pour les conditions météo de l'Afrique subsaharienne.</p></div></div>
+        <div class="flex gap-4"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div><div><h4 class="font-semibold mb-1">IA & Santé Tropicale</h4><p class="text-muted text-sm">Détection précoce des maladies endémiques via l'imagerie médicale.</p></div></div>
+      </div>
+    </div>
+    <div class="p-8 rounded-2xl border border-border bg-card">
+      <h3 class="font-syne font-bold text-2xl mb-6" data-i18n="res_pubs">Publications Récentes</h3>
+      <div class="space-y-4">
+        <div class="p-4 rounded-xl bg-dark/50 border border-border"><h4 class="font-semibold text-sm mb-1">WolofBERT: Towards Pre-trained Language Models for Wolof</h4><p class="text-muted text-xs">Mbaye et al., 2024 · NeurIPS Africa Workshop</p></div>
+        <div class="p-4 rounded-xl bg-dark/50 border border-border"><h4 class="font-semibold text-sm mb-1">Lightweight CNN for Crop Disease Detection in Sub-Saharan Africa</h4><p class="text-muted text-xs">Diallo et al., 2024 · ICLR 2024</p></div>
+        <div class="p-4 rounded-xl bg-dark/50 border border-border"><h4 class="font-semibold text-sm mb-1">Fraud Detection in African Mobile Money: A Deep Learning Approach</h4><p class="text-muted text-xs">Ndiaye et al., 2023 · IEEE AIKE</p></div>
+        <div class="p-4 rounded-xl bg-dark/50 border border-border"><h4 class="font-semibold text-sm mb-1">Satellite Image Analysis for Agricultural Yield Prediction in Senegal</h4><p class="text-muted text-xs">Camara et al., 2023 · CVPR Africa Workshop</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

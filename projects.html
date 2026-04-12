@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="projects">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="proj_label">// Nos Réalisations</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="proj_h1_1">Projets &</span><br/><span data-i18n="proj_h1_2">Cas d'Usage</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="proj_p">Découvrez comment nos solutions IA ont transformé les opérations de nos clients.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8 mb-16 stagger-grid">
+    <div class="service-card rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all">
+      <div class="h-48 bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center relative"><i class="fas fa-university text-5xl text-primary/50"></i><div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-mono border border-green-500/30" data-i18n="proj_done">Terminé</div></div>
+      <div class="p-6"><p class="text-primary text-xs font-mono mb-2">Finance · CBAO Group</p><h3 class="font-syne font-bold text-xl mb-3">Système de Détection de Fraude</h3><p class="text-muted text-sm leading-relaxed mb-4">Modèle ML temps réel analysant 50 000+ transactions/jour. Réduction des fraudes de 73% en 6 mois.</p><div class="flex items-center gap-4 text-sm"><span class="text-muted"><i class="fas fa-clock text-xs mr-1"></i>4 mois</span><span class="text-muted"><i class="fas fa-users text-xs mr-1"></i>5 experts</span><span class="text-green-400 font-mono text-xs">↑73% efficacité</span></div></div>
+    </div>
+    <div class="service-card rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all">
+      <div class="h-48 bg-gradient-to-br from-secondary/20 to-orange-500/20 flex items-center justify-center relative"><i class="fas fa-satellite-dish text-5xl text-secondary/50"></i><div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-mono border border-green-500/30" data-i18n="proj_done">Terminé</div></div>
+      <div class="p-6"><p class="text-primary text-xs font-mono mb-2">Télécoms · Sonatel</p><h3 class="font-syne font-bold text-xl mb-3">Prédiction de Churn Client</h3><p class="text-muted text-sm leading-relaxed mb-4">Classification identifiant 92% des clients à risque 30 jours avant leur départ. Économies 2M€/an.</p><div class="flex items-center gap-4 text-sm"><span class="text-muted"><i class="fas fa-clock text-xs mr-1"></i>6 mois</span><span class="text-muted"><i class="fas fa-users text-xs mr-1"></i>7 experts</span><span class="text-green-400 font-mono text-xs">↑92% précision</span></div></div>
+    </div>
+    <div class="service-card rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all">
+      <div class="h-48 bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center relative"><i class="fas fa-seedling text-5xl text-purple-400/50"></i><div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-mono border border-blue-500/30" data-i18n="proj_ongoing">En cours</div></div>
+      <div class="p-6"><p class="text-primary text-xs font-mono mb-2">Agriculture · Ministère DAPSA</p><h3 class="font-syne font-bold text-xl mb-3">Prévision des Rendements Agricoles</h3><p class="text-muted text-sm leading-relaxed mb-4">Données satellitaires, météo et historiques pour optimiser la planification agricole au Sénégal.</p><div class="flex items-center gap-4 text-sm"><span class="text-muted"><i class="fas fa-clock text-xs mr-1"></i>12 mois</span><span class="text-muted"><i class="fas fa-users text-xs mr-1"></i>8 experts</span><span class="text-blue-400 font-mono text-xs">60% avancement</span></div></div>
+    </div>
+    <div class="service-card rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all">
+      <div class="h-48 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center relative"><i class="fas fa-heartbeat text-5xl text-teal-400/50"></i><div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-mono border border-green-500/30" data-i18n="proj_done">Terminé</div></div>
+      <div class="p-6"><p class="text-primary text-xs font-mono mb-2">Santé · Hôpital Principal Dakar</p><h3 class="font-syne font-bold text-xl mb-3">Diagnostic Imagerie Médicale</h3><p class="text-muted text-sm leading-relaxed mb-4">Deep Learning analysant radiographies pour détecter tuberculose et pneumonie à 94% d'exactitude.</p><div class="flex items-center gap-4 text-sm"><span class="text-muted"><i class="fas fa-clock text-xs mr-1"></i>8 mois</span><span class="text-muted"><i class="fas fa-users text-xs mr-1"></i>6 experts</span><span class="text-green-400 font-mono text-xs">↑94% exactitude</span></div></div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="text-center p-6 rounded-2xl border border-border bg-card"><div class="font-syne text-4xl font-black text-primary mb-2">50+</div><div class="text-muted text-sm">Projets livrés</div></div>
+    <div class="text-center p-6 rounded-2xl border border-border bg-card"><div class="font-syne text-4xl font-black text-primary mb-2">12</div><div class="text-muted text-sm">Secteurs couverts</div></div>
+    <div class="text-center p-6 rounded-2xl border border-border bg-card"><div class="font-syne text-4xl font-black text-primary mb-2">95%</div><div class="text-muted text-sm">Satisfaction client</div></div>
+    <div class="text-center p-6 rounded-2xl border border-border bg-card"><div class="font-syne text-4xl font-black text-primary mb-2">2M€+</div><div class="text-muted text-sm">Valeur générée</div></div>
+  </div>
+</main>
+</body>
+</html>

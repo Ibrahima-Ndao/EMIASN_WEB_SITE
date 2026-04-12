@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="blog">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="blog_label">// Blog & Ressources</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="blog_h1_1">Actualités &</span><br/><span data-i18n="blog_h1_2">Insights IA</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="blog_p">Restez à la pointe de l'intelligence artificielle avec nos articles, analyses et tutoriels.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6 mb-6">
+    <div class="card-lift md:col-span-2 rounded-2xl border border-border bg-card overflow-hidden group hover:border-primary/30 transition-all cursor-pointer">
+      <div class="h-56 bg-gradient-to-br from-primary/20 via-blue-500/20 to-purple-500/20 flex items-center justify-center"><i class="fas fa-robot text-6xl text-primary/30"></i></div>
+      <div class="p-8">
+        <div class="flex items-center gap-3 mb-3"><span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono">À la Une</span><span class="text-muted text-xs">15 Jan 2025</span></div>
+        <h3 class="font-syne font-bold text-2xl mb-3 group-hover:text-primary transition-colors">L'IA Générative au Service de l'Agriculture Africaine : Défis et Opportunités</h3>
+        <p class="text-muted text-sm leading-relaxed mb-4">Comment les grands modèles de langage peuvent révolutionner l'agriculture sahélienne face aux défis climatiques.</p>
+        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">AM</div><span class="text-sm text-muted">Amadou Mbaye · 12 min de lecture</span></div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="flex-1 rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-all cursor-pointer group"><span class="text-muted text-xs font-mono">10 Jan 2025</span><h4 class="font-syne font-bold text-lg mt-2 mb-2 group-hover:text-primary transition-colors">TensorFlow vs PyTorch : Guide Complet 2025</h4><p class="text-muted text-sm">Comparaison détaillée pour choisir le meilleur framework.</p></div>
+      <div class="flex-1 rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-all cursor-pointer group"><span class="text-muted text-xs font-mono">5 Jan 2025</span><h4 class="font-syne font-bold text-lg mt-2 mb-2 group-hover:text-primary transition-colors">Construire un Chatbot NLP en Wolof avec Python</h4><p class="text-muted text-sm">Tutoriel pas-à-pas pour créer un assistant en langue locale.</p></div>
+    </div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6 mb-16">
+    <div class="card-lift rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-all cursor-pointer group"><span class="text-muted text-xs font-mono">28 Déc 2024</span><h4 class="font-syne font-bold text-lg mt-2 mb-2 group-hover:text-primary">MLOps : Déployer vos Modèles avec Docker</h4><p class="text-muted text-sm leading-relaxed mb-4">Guide pratique pour containeriser et déployer vos modèles ML.</p><div class="flex gap-2"><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">MLOps</span><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">Docker</span></div></div>
+    <div class="card-lift rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-all cursor-pointer group"><span class="text-muted text-xs font-mono">20 Déc 2024</span><h4 class="font-syne font-bold text-lg mt-2 mb-2 group-hover:text-primary">Détection de Fraude avec Scikit-Learn</h4><p class="text-muted text-sm leading-relaxed mb-4">Implémentation complète d'un système de détection de fraude.</p><div class="flex gap-2"><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">Scikit-Learn</span><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">Finance</span></div></div>
+    <div class="card-lift rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-all cursor-pointer group"><span class="text-muted text-xs font-mono">15 Déc 2024</span><h4 class="font-syne font-bold text-lg mt-2 mb-2 group-hover:text-primary">L'IA Éthique en Afrique</h4><p class="text-muted text-sm leading-relaxed mb-4">Comment garantir équité et transparence des algorithmes IA.</p><div class="flex gap-2"><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">Éthique</span><span class="px-2 py-1 bg-white/5 rounded-md text-muted text-xs">Afrique</span></div></div>
+  </div>
+  <div class="p-10 rounded-2xl border border-border bg-card text-center">
+    <h2 class="font-syne text-3xl font-black mb-3" data-i18n="newsletter_title">Newsletter IA</h2>
+    <p class="text-muted mb-6" data-i18n="newsletter_p">Recevez nos derniers articles chaque semaine.</p>
+    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" class="flex-1 px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" data-i18n-ph="newsletter_placeholder" placeholder="votre@email.com"/>
+      <button onclick="showToast(t('newsletter_toast'))" class="px-6 py-3 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all text-sm whitespace-nowrap" data-i18n="newsletter_btn">S'abonner</button>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrières – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="careers">
+<script src="components.js"></script>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+  <div class="mb-16 reveal-up">
+    <p class="text-primary font-mono text-sm mb-3" data-i18n="careers_label">// Carrières</p>
+    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+      <span data-i18n="careers_h1_1">Façonnez</span><br/><span data-i18n="careers_h1_2">l'IA de Demain</span>
+    </h1>
+    <p class="text-muted text-lg max-w-2xl" data-i18n="careers_p">Rejoignez une équipe de passionnés qui construisent l'avenir de l'IA en Afrique.</p>
+  </div>
+  <div class="grid md:grid-cols-4 gap-5 mb-16">
+    <div class="p-6 rounded-2xl border border-border bg-card text-center"><i class="fas fa-graduation-cap text-primary text-2xl mb-3"></i><h4 class="font-semibold mb-2" data-i18n="benefit_training">Formation Continue</h4><p class="text-muted text-xs" data-i18n="benefit_training_desc">Budget formation + certifications Google, AWS, Microsoft</p></div>
+    <div class="p-6 rounded-2xl border border-border bg-card text-center"><i class="fas fa-globe text-primary text-2xl mb-3"></i><h4 class="font-semibold mb-2" data-i18n="benefit_impact">Impact Mondial</h4><p class="text-muted text-xs" data-i18n="benefit_impact_desc">Projets d'envergure internationale</p></div>
+    <div class="p-6 rounded-2xl border border-border bg-card text-center"><i class="fas fa-laptop-house text-primary text-2xl mb-3"></i><h4 class="font-semibold mb-2" data-i18n="benefit_flex">Flexibilité</h4><p class="text-muted text-xs" data-i18n="benefit_flex_desc">Télétravail hybride, horaires flexibles</p></div>
+    <div class="p-6 rounded-2xl border border-border bg-card text-center"><i class="fas fa-chart-bar text-primary text-2xl mb-3"></i><h4 class="font-semibold mb-2" data-i18n="benefit_growth">Évolution Rapide</h4><p class="text-muted text-xs" data-i18n="benefit_growth_desc">Plan de carrière clair, promotions sur performance</p></div>
+  </div>
+  <h2 class="font-syne text-3xl font-black mb-8" data-i18n="open_positions">Postes Ouverts</h2>
+  <div class="space-y-4">
+    <div class="p-6 rounded-2xl border border-primary/40 bg-primary/5 hover:border-primary transition-all">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-3 mb-2"><span class="px-2.5 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-mono border border-secondary/30">🔥 Stage Rémunéré</span><span class="text-muted text-xs font-mono">5 postes ouverts</span></div>
+          <h3 class="font-syne font-bold text-xl mb-1">Stagiaire Data Science</h3>
+          <p class="text-muted text-sm">Python · NumPy · Pandas · Matplotlib · Scikit-Learn · Keras · TensorFlow</p>
+        </div>
+        <div class="flex flex-col items-start md:items-end gap-2">
+          <div class="text-sm text-muted"><i class="fas fa-map-marker-alt text-primary mr-1"></i>Dakar · <i class="fas fa-calendar text-primary mr-1 ml-2"></i>6 mois</div>
+          <a href="apply.html" class="px-5 py-2 bg-primary text-dark text-sm font-bold rounded-lg hover:bg-cyan-300 transition-all">Postuler <i class="fas fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+      <div class="mt-4 pt-4 border-t border-primary/20">
+        <p class="text-sm text-muted leading-relaxed"><strong class="text-white">Mission :</strong> Contribuer au développement d'algorithmes ML/DL, gérer les bibliothèques Python (NumPy, Pandas, Matplotlib), optimiser les modèles et proposer des solutions innovantes pour nos clients Grands Comptes.</p>
+        <div class="mt-3 flex flex-wrap gap-4 text-xs text-muted"><span>✓ Bac+4/+5 requis</span><span>✓ Anglais courant (écrit & lu)</span><span>✓ 2-3 ans d'expérience</span></div>
+      </div>
+    </div>
+    <div class="card-lift p-6 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div><span class="px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-mono border border-blue-500/30 mb-2 inline-block">CDI</span><h3 class="font-syne font-bold text-xl mb-1">Senior ML Engineer</h3><p class="text-muted text-sm">Python · PyTorch · MLOps · Docker · Kubernetes</p></div>
+        <div class="flex flex-col items-start md:items-end gap-2"><span class="text-sm text-muted"><i class="fas fa-map-marker-alt text-primary mr-1"></i>Dakar / Remote</span><a href="apply.html" class="px-5 py-2 border border-border text-sm font-semibold rounded-lg hover:border-primary/50 hover:text-primary transition-all">Postuler</a></div>
+      </div>
+    </div>
+    <div class="card-lift p-6 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div><span class="px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-mono border border-blue-500/30 mb-2 inline-block">CDI</span><h3 class="font-syne font-bold text-xl mb-1">NLP Research Scientist</h3><p class="text-muted text-sm">HuggingFace · BERT · GPT · Langues africaines</p></div>
+        <div class="flex flex-col items-start md:items-end gap-2"><span class="text-sm text-muted"><i class="fas fa-map-marker-alt text-primary mr-1"></i>Dakar</span><a href="apply.html" class="px-5 py-2 border border-border text-sm font-semibold rounded-lg hover:border-primary/50 hover:text-primary transition-all">Postuler</a></div>
+      </div>
+    </div>
+    <div class="card-lift p-6 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div><span class="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-mono border border-purple-500/30 mb-2 inline-block">CDD</span><h3 class="font-syne font-bold text-xl mb-1">Data Engineer</h3><p class="text-muted text-sm">Apache Spark · Airflow · SQL · Hadoop</p></div>
+        <div class="flex flex-col items-start md:items-end gap-2"><span class="text-sm text-muted"><i class="fas fa-map-marker-alt text-primary mr-1"></i>Dakar / Abidjan</span><a href="apply.html" class="px-5 py-2 border border-border text-sm font-semibold rounded-lg hover:border-primary/50 hover:text-primary transition-all">Postuler</a></div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
