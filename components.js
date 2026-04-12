@@ -44,7 +44,7 @@ const TRANSLATIONS = {
       },
       address: "Villa N°7308, SICAP Mermoz 2, Dakar, Sénégal",
       status: "Tous les systèmes opérationnels",
-      rights: "© 2025 EMIASN. Tous droits réservés.",
+      rights: "© 2026 EMIASN. Tous droits réservés.",
     },
   },
   en: {
@@ -81,7 +81,7 @@ const TRANSLATIONS = {
       },
       address: "Villa N°7308, SICAP Mermoz 2, Dakar, Senegal",
       status: "All systems operational",
-      rights: "© 2025 EMIASN. All rights reserved.",
+      rights: "© 2026 EMIASN. All rights reserved.",
     },
   },
   ar: {
@@ -118,7 +118,7 @@ const TRANSLATIONS = {
       },
       address: "فيلا رقم 7308، SICAP ميرموز 2، داكار، السنغال",
       status: "جميع الأنظمة تعمل",
-      rights: "© 2025 EMIASN. جميع الحقوق محفوظة.",
+      rights: "© 2026 EMIASN. جميع الحقوق محفوظة.",
     },
   },
 };
