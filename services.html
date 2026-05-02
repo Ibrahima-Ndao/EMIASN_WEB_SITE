@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services – EMIASN</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services – EMIASN</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script>
     tailwind.config = {
       theme: { extend: {
         fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
@@ -19,103 +20,101 @@
 </head>
 <body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="services">
 <script src="components.js"></script>
-
 <!-- Custom cursor -->
 <div id="cursor"></div>
 <div id="cursor-dot"></div>
-
 <main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
-  <div class="mb-16 reveal-up">
-    <p class="text-primary font-mono text-sm mb-3" data-i18n="serv_label">// Nos Services</p>
-    <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
-      <span data-i18n="serv_h1_1">Expertise IA</span><br/><span data-i18n="serv_h1_2">Complète</span>
-    </h1>
-    <p class="text-muted text-lg max-w-2xl" data-i18n="serv_p">Du data engineering à la mise en production, nous couvrons l'intégralité du cycle de vie de vos projets IA.</p>
-  </div>
-  <div class="grid md:grid-cols-2 gap-6 mb-12 stagger-grid">
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-brain text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">Machine Learning</h3><p class="text-primary text-sm font-mono">Prédiction · Classification · Clustering</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Algorithmes supervisés et non-supervisés avec Scikit-Learn. Régression, SVM, Random Forest, Gradient Boosting…</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Scikit-Learn</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">XGBoost</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">LightGBM</span>
-      </div>
-    </div>
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-network-wired text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">Deep Learning</h3><p class="text-primary text-sm font-mono">CNN · RNN · Transformers</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Architectures de réseaux profonds avec TensorFlow et Keras : reconnaissance d'images, génération de texte, séries temporelles.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">TensorFlow</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Keras</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">PyTorch</span>
-      </div>
-    </div>
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-chart-pie text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">Data Science & Analytics</h3><p class="text-primary text-sm font-mono">EDA · Visualisation · Insights</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Exploration avec NumPy, Pandas. Visualisation interactive avec Matplotlib et Seaborn pour des rapports décisionnels.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">NumPy</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Pandas</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Seaborn</span>
-      </div>
-    </div>
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-eye text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">Computer Vision</h3><p class="text-primary text-sm font-mono">Détection · Reconnaissance · Segmentation</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Solutions de vision par ordinateur pour la sécurité, contrôle qualité et surveillance. Détection d'objets en temps réel.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">OpenCV</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">YOLO</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">ResNet</span>
-      </div>
-    </div>
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-comments text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">NLP & Traitement du Langage</h3><p class="text-primary text-sm font-mono">Analyse · Génération · Chatbots</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Analyse de sentiment, extraction d'entités, chatbots intelligents et traduction en français, anglais et wolof.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">spaCy</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">HuggingFace</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">BERT</span>
-      </div>
-    </div>
-    <div class="service-card group p-8 rounded-2xl border border-border bg-card">
-      <div class="flex items-start gap-5 mb-6">
-        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-server text-primary text-2xl"></i></div>
-        <div><h3 class="font-syne font-bold text-xl mb-1">MLOps & Déploiement</h3><p class="text-primary text-sm font-mono">Pipeline · Production · Monitoring</p></div>
-      </div>
-      <p class="text-muted text-sm leading-relaxed mb-4">Mise en production CI/CD, monitoring des performances, gestion du drift et scalabilité cloud ou on-premise.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Docker</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">MLflow</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">FastAPI</span>
-      </div>
-    </div>
-  </div>
-  <div class="glass-card reveal rounded-2xl border border-border bg-card p-10">
-    <h2 class="font-syne text-3xl font-black mb-10" data-i18n="serv_process">Notre Processus</h2>
-    <div class="grid md:grid-cols-5 gap-4">
-      <div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">01</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s1">Découverte</h4><p class="text-muted text-xs" data-i18n="serv_s1_desc">Audit des données et besoins</p></div>
-      <div class="hidden md:flex items-center justify-center text-border text-2xl mt-4">→</div>
-      <div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">02</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s2">Conception</h4><p class="text-muted text-xs" data-i18n="serv_s2_desc">Architecture du modèle</p></div>
-      <div class="hidden md:flex items-center justify-center text-border text-2xl mt-4">→</div>
-      <div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">03</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s3">Développement</h4><p class="text-muted text-xs" data-i18n="serv_s3_desc">Entraînement et optimisation</p></div>
-    </div>
-  </div>
+<div class="mb-16 reveal-up">
+<p class="text-primary font-mono text-sm mb-3" data-i18n="serv_label">// Nos Services</p>
+<h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+<span data-i18n="serv_h1_1">Expertise IA</span><br/><span data-i18n="serv_h1_2">Complète</span>
+</h1>
+<p class="text-muted text-lg max-w-2xl" data-i18n="serv_p">Du data engineering à la mise en production, nous couvrons l'intégralité du cycle de vie de vos projets IA.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6 mb-12 stagger-grid">
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-brain text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_ml_title">Machine Learning</h3><p class="text-primary text-sm font-mono" data-i18n="serv_ml_subtitle">Prédiction · Classification · Clustering</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_ml_desc">Algorithmes supervisés et non-supervisés avec Scikit-Learn. Régression, SVM, Random Forest, Gradient Boosting…</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Scikit-Learn</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">XGBoost</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">LightGBM</span>
+</div>
+</div>
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-network-wired text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_dl_title">Deep Learning</h3><p class="text-primary text-sm font-mono" data-i18n="serv_dl_subtitle">CNN · RNN · Transformers</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_dl_desc">Architectures de réseaux profonds avec TensorFlow et Keras : reconnaissance d'images, génération de texte, séries temporelles.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">TensorFlow</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Keras</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">PyTorch</span>
+</div>
+</div>
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-chart-pie text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_ds_title">Data Science &amp; Analytics</h3><p class="text-primary text-sm font-mono" data-i18n="serv_ds_subtitle">EDA · Visualisation · Insights</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_ds_desc">Exploration avec NumPy, Pandas. Visualisation interactive avec Matplotlib et Seaborn pour des rapports décisionnels.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">NumPy</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Pandas</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Seaborn</span>
+</div>
+</div>
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-eye text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_cv_title">Computer Vision</h3><p class="text-primary text-sm font-mono" data-i18n="serv_cv_subtitle">Détection · Reconnaissance · Segmentation</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_cv_desc">Solutions de vision par ordinateur pour la sécurité, contrôle qualité et surveillance. Détection d'objets en temps réel.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">OpenCV</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">YOLO</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">ResNet</span>
+</div>
+</div>
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-comments text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_nlp_title">NLP &amp; Traitement du Langage</h3><p class="text-primary text-sm font-mono" data-i18n="serv_nlp_subtitle">Analyse · Génération · Chatbots</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_nlp_desc">Analyse de sentiment, extraction d'entités, chatbots intelligents et traduction en français, anglais et wolof.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">spaCy</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">HuggingFace</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">BERT</span>
+</div>
+</div>
+<div class="service-card group p-8 rounded-2xl border border-border bg-card">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"><i class="fas fa-server text-primary text-2xl"></i></div>
+<div><h3 class="font-syne font-bold text-xl mb-1" data-i18n="serv_mlops_title">MLOps &amp; Déploiement</h3><p class="text-primary text-sm font-mono" data-i18n="serv_mlops_subtitle">Pipeline · Production · Monitoring</p></div>
+</div>
+<p class="text-muted text-sm leading-relaxed mb-4" data-i18n="serv_mlops_desc">Mise en production CI/CD, monitoring des performances, gestion du drift et scalabilité cloud ou on-premise.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">Docker</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">MLflow</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-muted text-xs border border-border">FastAPI</span>
+</div>
+</div>
+</div>
+<div class="glass-card reveal rounded-2xl border border-border bg-card p-10">
+<h2 class="font-syne text-3xl font-black mb-10" data-i18n="serv_process">Notre Processus</h2>
+<div class="grid md:grid-cols-5 gap-4">
+<div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">01</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s1">Découverte</h4><p class="text-muted text-xs" data-i18n="serv_s1_desc">Audit des données et besoins</p></div>
+<div class="hidden md:flex items-center justify-center text-border text-2xl mt-4">→</div>
+<div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">02</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s2">Conception</h4><p class="text-muted text-xs" data-i18n="serv_s2_desc">Architecture du modèle</p></div>
+<div class="hidden md:flex items-center justify-center text-border text-2xl mt-4">→</div>
+<div class="text-center"><div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3"><span class="text-primary font-mono font-bold">03</span></div><h4 class="font-semibold text-sm mb-1" data-i18n="serv_s3">Développement</h4><p class="text-muted text-xs" data-i18n="serv_s3_desc">Entraînement et optimisation</p></div>
+</div>
+</div>
 </main>
 </body>
 </html>
