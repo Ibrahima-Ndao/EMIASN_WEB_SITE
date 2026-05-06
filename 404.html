@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-Frame-Options" content="DENY"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page introuvable – EMIASN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        colors: { primary:'#00E5FF', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
+      }}
+    }
+  </script>
+  <style>
+    body { background: #030712; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+    .grid-bg { background-image: linear-gradient(rgba(0,229,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .text-gradient { background: linear-gradient(135deg,#00E5FF,#3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glitch { animation: glitch 2s infinite; }
+    @keyframes glitch {
+      0%,90%,100% { transform: translate(0); }
+      92% { transform: translate(-2px, 1px); }
+      94% { transform: translate(2px, -1px); }
+      96% { transform: translate(-1px, 2px); }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-dark text-white font-grotesk flex items-center justify-center overflow-hidden relative">
+
+  <!-- Background -->
+  <div class="absolute inset-0 grid-bg opacity-20"></div>
+  <div class="orb" style="top:-10%;left:50%;transform:translateX(-50%);width:500px;height:500px;background:rgba(0,229,255,.08)"></div>
+  <div class="orb" style="bottom:10%;right:5%;width:300px;height:300px;background:rgba(59,130,246,.06)"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
+
+    <!-- Error code -->
+    <div class="font-syne font-black text-[8rem] md:text-[12rem] leading-none text-primary/10 glitch mb-0 select-none">404</div>
+
+    <!-- Icon -->
+    <div class="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto -mt-6 mb-8">
+      <i class="fas fa-robot text-primary text-3xl"></i>
+    </div>
+
+    <!-- Title -->
+    <h1 class="font-syne text-3xl md:text-4xl font-black mb-4">
+      Page <span class="text-gradient">introuvable</span>
+    </h1>
+
+    <p class="text-muted text-lg mb-2">
+      Il semble que cette page n'existe pas ou a été déplacée.
+    </p>
+    <p class="font-mono text-sm text-primary/60 mb-10">
+      // ERROR_404 · PAGE_NOT_FOUND · EMIASN_SYSTEM
+    </p>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/index.html"
+         class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all text-sm">
+        <i class="fas fa-home"></i> Retour à l'accueil
+      </a>
+      <a href="/contact.html"
+         class="inline-flex items-center gap-2 px-8 py-4 border border-border text-white font-semibold rounded-xl hover:border-primary/50 hover:bg-white/5 transition-all text-sm">
+        <i class="fas fa-envelope text-primary"></i> Nous contacter
+      </a>
+    </div>
+
+    <!-- Quick links -->
+    <div class="mt-12 flex flex-wrap gap-3 justify-center text-sm">
+      <a href="/services.html"  class="px-4 py-2 rounded-lg bg-white/5 border border-border text-muted hover:text-primary hover:border-primary/30 transition-all">Services</a>
+      <a href="/projects.html"  class="px-4 py-2 rounded-lg bg-white/5 border border-border text-muted hover:text-primary hover:border-primary/30 transition-all">Projets</a>
+      <a href="/team.html"      class="px-4 py-2 rounded-lg bg-white/5 border border-border text-muted hover:text-primary hover:border-primary/30 transition-all">Équipe</a>
+      <a href="/careers.html"   class="px-4 py-2 rounded-lg bg-white/5 border border-border text-muted hover:text-primary hover:border-primary/30 transition-all">Carrières</a>
+      <a href="/faq.html"       class="px-4 py-2 rounded-lg bg-white/5 border border-border text-muted hover:text-primary hover:border-primary/30 transition-all">FAQ</a>
+    </div>
+
+    <!-- Brand -->
+    <p class="mt-12 text-muted text-xs font-mono">EMIASN © 2025 · Intelligence Artificielle · Dakar, Sénégal</p>
+  </div>
+
+</body>
+</html>

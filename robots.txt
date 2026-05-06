@@ -1,0 +1,15 @@
+# ═══════════════════════════════════════════
+#  EMIASN – robots.txt
+#  https://emiasn.com/robots.txt
+# ═══════════════════════════════════════════
+
+User-agent: *
+Allow: /
+
+# Bloquer les crawlers des fichiers techniques
+Disallow: /.htaccess
+Disallow: /components.js
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://emiasn.com/sitemap.xml

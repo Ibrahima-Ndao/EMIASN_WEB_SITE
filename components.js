@@ -2792,20 +2792,65 @@ function initCounters() {
 }
 
 // ════════════════════════════════════════════════
+//  SÉCURITÉ FORMULAIRES — Sanitisation & Protection
+// ════════════════════════════════════════════════
+
+/** Supprime les balises HTML/JS d'une chaîne (anti-XSS) */
+function sanitize(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;")
+    .trim();
+}
+
+/** Tronque une chaîne à maxLen caractères */
+function truncate(str, maxLen) {
+  return String(str).slice(0, maxLen);
+}
+
+/** Rate-limiting côté client : max 1 envoi / 60 secondes par formulaire */
+const _formLastSent = {};
+function canSubmit(formId) {
+  const now = Date.now();
+  const last = _formLastSent[formId] || 0;
+  if (now - last < 60000) {
+    showToast("⏳ Veuillez patienter avant d'envoyer un nouveau message.");
+    return false;
+  }
+  _formLastSent[formId] = now;
+  return true;
+}
+
+/** Vérifie le champ honeypot (doit rester vide — rempli = bot) */
+function isBot(honeypotId) {
+  const hp = document.getElementById(honeypotId);
+  return hp && hp.value.length > 0;
+}
+
+// ════════════════════════════════════════════════
 //  CONTACT FORM  – Web3Forms (emails → ndaoibrahima037@gmail.com)
 //  Clé d'accès : https://web3forms.com  →  entrez votre email → copiez la clé
 // ════════════════════════════════════════════════
 const WEB3FORMS_KEY = "VOTRE_CLE_ICI"; // ← Remplacez par votre clé Web3Forms
 
 async function sendContactForm() {
-  const fname    = document.getElementById("contact-fname")?.value.trim()    || "";
-  const lname    = document.getElementById("contact-lname")?.value.trim()    || "";
-  const emailVal = document.getElementById("contact-email")?.value.trim()    || "";
-  const company  = document.getElementById("contact-company")?.value.trim()  || "";
+  // Anti-bot honeypot check
+  if (isBot("contact-honeypot")) return;
+  // Rate limiting
+  if (!canSubmit("contact")) return;
+
+  const fname    = truncate(document.getElementById("contact-fname")?.value.trim()    || "", 100);
+  const lname    = truncate(document.getElementById("contact-lname")?.value.trim()    || "", 100);
+  const emailVal = truncate(document.getElementById("contact-email")?.value.trim()    || "", 254);
+  const company  = truncate(sanitize(document.getElementById("contact-company")?.value.trim()  || ""), 200);
   const subjectEl = document.getElementById("contact-subject");
-  const subject  = subjectEl?.options[subjectEl.selectedIndex]?.text || "Contact";
-  const message  = document.getElementById("contact-message")?.value.trim()  || "";
-  const phone    = document.getElementById("contact-phone")?.value.trim()    || "";
+  const subject  = sanitize(subjectEl?.options[subjectEl.selectedIndex]?.text || "Contact");
+  const message  = truncate(sanitize(document.getElementById("contact-message")?.value.trim()  || ""), 5000);
+  const phone    = truncate(document.getElementById("contact-phone")?.value.trim()    || "", 30);
 
   // ── Validation ──
   if (!emailVal || !message) {

@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════
+#  EMIASN – Configuration Apache / Hostinger
+#  Site : emiasn.com (ou le domaine choisi)
+# ═══════════════════════════════════════════════════════════
+
+# ── Activer le module Rewrite ──
+Options -Indexes
+Options -MultiViews
+RewriteEngine On
+
+# ── 1. FORCER HTTPS ──────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── 2. REDIRIGER www → sans www ──────────────────────────
+# (supprimer ce bloc si vous préférez avec www)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# ── 3. PAGE D'ERREUR 404 PERSONNALISÉE ──────────────────
+ErrorDocument 404 /404.html
+
+# ── 4. EN-TÊTES DE SÉCURITÉ HTTP ────────────────────────
+<IfModule mod_headers.c>
+    # Anti-clickjacking
+    Header always set X-Frame-Options "DENY"
+    # Anti-MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Protection XSS navigateur
+    Header always set X-XSS-Protection "1; mode=block"
+    # Politique de référence
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Désactiver caméra / micro / géoloc
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    # HSTS : forcer HTTPS pendant 1 an
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    # Supprimer la signature Apache
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# ── 5. COMPRESSION GZIP ──────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/woff font/woff2
+</IfModule>
+
+# ── 6. CACHE NAVIGATEUR ──────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # HTML : pas de cache (toujours frais)
+    ExpiresByType text/html                 "access plus 0 seconds"
+    # CSS et JS : 1 semaine
+    ExpiresByType text/css                  "access plus 1 week"
+    ExpiresByType application/javascript    "access plus 1 week"
+    # Images : 1 mois
+    ExpiresByType image/jpeg                "access plus 1 month"
+    ExpiresByType image/png                 "access plus 1 month"
+    ExpiresByType image/webp                "access plus 1 month"
+    ExpiresByType image/svg+xml             "access plus 1 month"
+    ExpiresByType image/x-icon              "access plus 1 year"
+    # Polices : 1 an
+    ExpiresByType font/woff                 "access plus 1 year"
+    ExpiresByType font/woff2                "access plus 1 year"
+</IfModule>
+
+# ── 7. PROTÉGER LES FICHIERS SENSIBLES ───────────────────
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(log|sql|env|bak|sh|py|config)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── 8. BLOQUER LES BOTS MALVEILLANTS ────────────────────
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} (harvester|scanner|sqlmap|nikto|nmap|masscan) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ── 9. DÉSACTIVER LA SIGNATURE DU SERVEUR ───────────────
+ServerSignature Off
