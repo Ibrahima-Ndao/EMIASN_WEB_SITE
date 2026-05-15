@@ -1,23 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Accueil – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Accueil – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -38,338 +53,505 @@
         },
       };
     </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-i18n-title="page_home" data-page="home">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<!-- Particles canvas -->
-<canvas class="fixed inset-0 pointer-events-none z-0 opacity-60" id="particles-canvas"></canvas>
-<main>
-<!-- ── HERO ── -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-<!-- Background layers -->
-<div class="absolute inset-0 grid-bg opacity-20"></div>
-<div class="orb orb-cyan" style="
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-i18n-title="page_home"
+    data-page="home"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <!-- Particles canvas -->
+    <canvas
+      class="fixed inset-0 pointer-events-none z-0 opacity-60"
+      id="particles-canvas"
+    ></canvas>
+    <main>
+      <!-- ── HERO ── -->
+      <section
+        class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      >
+        <!-- Background layers -->
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+        <div
+          class="orb orb-cyan"
+          style="
             top: -10%;
             left: 50%;
             transform: translateX(-50%);
             width: 700px;
             height: 700px;
-          "></div>
-<div class="orb orb-blue" style="top: 30%; right: -5%; width: 350px; height: 350px"></div>
-<div class="orb orb-purple" style="
+          "
+        ></div>
+        <div
+          class="orb orb-blue"
+          style="top: 30%; right: -5%; width: 350px; height: 350px"
+        ></div>
+        <div
+          class="orb orb-purple"
+          style="
             bottom: 10%;
             left: 5%;
             width: 280px;
             height: 280px;
             opacity: 0.3;
-          "></div>
-<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
-<!-- Live badge -->
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono mb-8 animate-fade-in">
-<span class="badge-live"></span>
-<span data-i18n="hero_badge">Intelligence Artificielle · Dakar, Sénégal · Global</span>
-</div>
-<!-- Headline -->
-<h1 class="font-syne text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.95] animate-slide-up">
-<span data-i18n="hero_h1_1">L'IA au service</span><br/>
-<span class="text-gradient" data-i18n="hero_h1_2">de l'Afrique</span><br/>
-<span data-i18n="hero_h1_3">et du Monde</span>
-</h1>
-<p class="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-slide-up-delay font-light leading-relaxed">
-<span data-i18n="hero_p">EMIASN développe des solutions d'intelligence artificielle de
+          "
+        ></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+          <!-- Live badge -->
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono mb-8 animate-fade-in"
+          >
+            <span class="badge-live"></span>
+            <span data-i18n="hero_badge"
+              >Intelligence Artificielle · Dakar, Sénégal · Global</span
+            >
+          </div>
+          <!-- Headline -->
+          <h1
+            class="font-syne text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.95] animate-slide-up"
+          >
+            <span data-i18n="hero_h1_1">L'IA au service</span><br />
+            <span class="text-gradient" data-i18n="hero_h1_2">de l'Afrique</span
+            ><br />
+            <span data-i18n="hero_h1_3">et du Monde</span>
+          </h1>
+          <p
+            class="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-slide-up-delay font-light leading-relaxed"
+          >
+            <span data-i18n="hero_p"
+              >EMIASN développe des solutions d'intelligence artificielle de
               pointe pour les grandes entreprises sénégalaises et
-              internationales.</span>
-</p>
-<!-- CTAs -->
-<div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2">
-<a class="btn-primary btn-glow shine px-8 py-4 bg-primary text-dark font-bold rounded-xl text-sm" href="solutions.html">
-<span data-i18n="hero_cta1">Découvrir nos Solutions</span>
-<i class="fas fa-arrow-right ml-2"></i>
-</a>
-<a class="btn-outline px-8 py-4 border border-border text-white font-semibold rounded-xl hover:border-primary/50 hover:bg-white/5 transition-all text-sm" data-i18n="hero_cta2" href="contact.html">Nous Contacter</a>
-</div>
-<!-- Stats -->
-<div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-late stagger-grid">
-<div class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-<div class="font-syne text-4xl font-black text-primary counter" data-suffix="+" data-target="50">
+              internationales.</span
+            >
+          </p>
+          <!-- CTAs -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2"
+          >
+            <a
+              class="btn-primary btn-glow shine px-8 py-4 bg-primary text-dark font-bold rounded-xl text-sm"
+              href="solutions.html"
+            >
+              <span data-i18n="hero_cta1">Découvrir nos Solutions</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a
+              class="btn-outline px-8 py-4 border border-border text-white font-semibold rounded-xl hover:border-primary/50 hover:bg-white/5 transition-all text-sm"
+              data-i18n="hero_cta2"
+              href="contact.html"
+              >Nous Contacter</a
+            >
+          </div>
+          <!-- Stats -->
+          <div
+            class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-late stagger-grid"
+          >
+            <div
+              class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur"
+            >
+              <div
+                class="font-syne text-4xl font-black text-primary counter"
+                data-suffix="+"
+                data-target="50"
+              >
                 0+
               </div>
-<div class="text-muted text-sm mt-1" data-i18n="stats_1">
+              <div class="text-muted text-sm mt-1" data-i18n="stats_1">
                 Projets réalisés
               </div>
-</div>
-<div class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-<div class="font-syne text-4xl font-black text-primary counter" data-suffix="+" data-target="12">
+            </div>
+            <div
+              class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur"
+            >
+              <div
+                class="font-syne text-4xl font-black text-primary counter"
+                data-suffix="+"
+                data-target="12"
+              >
                 0+
               </div>
-<div class="text-muted text-sm mt-1" data-i18n="stats_2">
+              <div class="text-muted text-sm mt-1" data-i18n="stats_2">
                 Grands Comptes
               </div>
-</div>
-<div class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-<div class="font-syne text-4xl font-black text-primary counter" data-suffix="+" data-target="30">
+            </div>
+            <div
+              class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur"
+            >
+              <div
+                class="font-syne text-4xl font-black text-primary counter"
+                data-suffix="+"
+                data-target="30"
+              >
                 0+
               </div>
-<div class="text-muted text-sm mt-1" data-i18n="stats_3">
+              <div class="text-muted text-sm mt-1" data-i18n="stats_3">
                 Experts IA
               </div>
-</div>
-<div class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-<div class="font-syne text-4xl font-black text-primary counter" data-suffix="" data-target="5">
+            </div>
+            <div
+              class="stat-card text-center p-6 rounded-2xl border border-border bg-card/50 backdrop-blur"
+            >
+              <div
+                class="font-syne text-4xl font-black text-primary counter"
+                data-suffix=""
+                data-target="5"
+              >
                 0
               </div>
-<div class="text-muted text-sm mt-1" data-i18n="stats_4">
+              <div class="text-muted text-sm mt-1" data-i18n="stats_4">
                 Pays couverts
               </div>
-</div>
-</div>
-</div>
-<!-- Scroll indicator -->
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs scroll-bounce">
-<span data-i18n="scroll_down">Défiler</span>
-<i class="fas fa-chevron-down"></i>
-</div>
-</section>
-<!-- ── TICKER ── -->
-<div class="border-y border-border bg-card/30 py-4 overflow-hidden">
-<div class="ticker-wrap">
-<div class="ticker">
-<span class="ticker-item font-mono text-sm text-muted">Python</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">TensorFlow</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">PyTorch</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Keras</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Scikit-Learn</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">NumPy</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Pandas</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Matplotlib</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Seaborn</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Computer Vision</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">NLP</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">LLMs</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Python</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">TensorFlow</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Keras</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Scikit-Learn</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">NumPy</span><span class="ticker-sep text-primary">·</span>
-<span class="ticker-item font-mono text-sm text-muted">Pandas</span><span class="ticker-sep text-primary">·</span>
-</div>
-</div>
-</div>
-<!-- ── SERVICES APERÇU ── -->
-<section class="max-w-7xl mx-auto px-6 py-24">
-<div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4 reveal-up">
-<div>
-<p class="text-primary font-mono text-sm mb-3" data-i18n="services_label">
+            </div>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs scroll-bounce"
+        >
+          <span data-i18n="scroll_down">Défiler</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+      <!-- ── TICKER ── -->
+      <div class="border-y border-border bg-card/30 py-4 overflow-hidden">
+        <div class="ticker-wrap">
+          <div class="ticker">
+            <span class="ticker-item font-mono text-sm text-muted">Python</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >TensorFlow</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">PyTorch</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Keras</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >Scikit-Learn</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">NumPy</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Pandas</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >Matplotlib</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Seaborn</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >Computer Vision</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">NLP</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">LLMs</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Python</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >TensorFlow</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Keras</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted"
+              >Scikit-Learn</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">NumPy</span
+            ><span class="ticker-sep text-primary">·</span>
+            <span class="ticker-item font-mono text-sm text-muted">Pandas</span
+            ><span class="ticker-sep text-primary">·</span>
+          </div>
+        </div>
+      </div>
+      <!-- ── SERVICES APERÇU ── -->
+      <section class="max-w-7xl mx-auto px-6 py-24">
+        <div
+          class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4 reveal-up"
+        >
+          <div>
+            <p
+              class="text-primary font-mono text-sm mb-3"
+              data-i18n="services_label"
+            >
               // Nos Expertises
             </p>
-<h2 class="font-syne text-4xl md:text-5xl font-black">
-<span data-i18n="services_h2_1">Ce que nous</span><br/><span data-i18n="services_h2_2">faisons mieux</span>
-</h2>
-</div>
-<a class="footer-link text-muted hover:text-primary transition-colors text-sm flex items-center gap-2" href="services.html">
-<span data-i18n="services_link">Voir tous les services</span>
-<i class="fas fa-arrow-right text-xs"></i>
-</a>
-</div>
-<div class="grid md:grid-cols-3 gap-6 stagger-grid">
-<div class="service-card group p-8 rounded-2xl border border-border bg-card">
-<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-<i class="fas fa-brain text-primary text-2xl"></i>
-</div>
-<h3 class="font-syne font-bold text-xl mb-3" data-i18n="ml_title">
+            <h2 class="font-syne text-4xl md:text-5xl font-black">
+              <span data-i18n="services_h2_1">Ce que nous</span><br /><span
+                data-i18n="services_h2_2"
+                >faisons mieux</span
+              >
+            </h2>
+          </div>
+          <a
+            class="footer-link text-muted hover:text-primary transition-colors text-sm flex items-center gap-2"
+            href="services.html"
+          >
+            <span data-i18n="services_link">Voir tous les services</span>
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 stagger-grid">
+          <div
+            class="service-card group p-8 rounded-2xl border border-border bg-card"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
+            >
+              <i class="fas fa-brain text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl mb-3" data-i18n="ml_title">
               Machine Learning
             </h3>
-<p class="text-muted text-sm leading-relaxed" data-i18n="ml_desc">
+            <p class="text-muted text-sm leading-relaxed" data-i18n="ml_desc">
               Algorithmes prédictifs et analytiques adaptés aux problématiques
               métiers de vos grands comptes.
             </p>
-<div class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-<span data-i18n="learn_more">En savoir plus</span>
-<i class="fas fa-arrow-right text-xs"></i>
-</div>
-</div>
-<div class="service-card group p-8 rounded-2xl border border-border bg-card">
-<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-<i class="fas fa-network-wired text-primary text-2xl"></i>
-</div>
-<h3 class="font-syne font-bold text-xl mb-3" data-i18n="dl_title">
+            <div
+              class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span data-i18n="learn_more">En savoir plus</span>
+              <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+          <div
+            class="service-card group p-8 rounded-2xl border border-border bg-card"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
+            >
+              <i class="fas fa-network-wired text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl mb-3" data-i18n="dl_title">
               Deep Learning
             </h3>
-<p class="text-muted text-sm leading-relaxed" data-i18n="dl_desc">
+            <p class="text-muted text-sm leading-relaxed" data-i18n="dl_desc">
               Réseaux de neurones profonds avec TensorFlow et Keras pour la
               vision, NLP et analyse avancée.
             </p>
-<div class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-<span data-i18n="learn_more">En savoir plus</span>
-<i class="fas fa-arrow-right text-xs"></i>
-</div>
-</div>
-<div class="service-card group p-8 rounded-2xl border border-border bg-card">
-<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-<i class="fas fa-chart-line text-primary text-2xl"></i>
-</div>
-<h3 class="font-syne font-bold text-xl mb-3" data-i18n="ds_title">
+            <div
+              class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span data-i18n="learn_more">En savoir plus</span>
+              <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+          <div
+            class="service-card group p-8 rounded-2xl border border-border bg-card"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
+            >
+              <i class="fas fa-chart-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl mb-3" data-i18n="ds_title">
               Data Science
             </h3>
-<p class="text-muted text-sm leading-relaxed" data-i18n="ds_desc">
+            <p class="text-muted text-sm leading-relaxed" data-i18n="ds_desc">
               Analyse de données massives, visualisation et insights
               stratégiques avec NumPy, Pandas et Matplotlib.
             </p>
-<div class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-<span data-i18n="learn_more">En savoir plus</span>
-<i class="fas fa-arrow-right text-xs"></i>
-</div>
-</div>
-</div>
-</section>
-<!-- ── WHY US ── -->
-<section class="bg-card/30 border-y border-border py-24">
-<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-<div class="reveal-left">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="why_label">
+            <div
+              class="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span data-i18n="learn_more">En savoir plus</span>
+              <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ── WHY US ── -->
+      <section class="bg-card/30 border-y border-border py-24">
+        <div
+          class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
+          <div class="reveal-left">
+            <p
+              class="text-primary font-mono text-sm mb-3"
+              data-i18n="why_label"
+            >
               // Pourquoi EMIASN
             </p>
-<h2 class="font-syne text-4xl md:text-5xl font-black mb-6">
-<span data-i18n="why_h2_1">Pionniers de l'IA</span><br/><span data-i18n="why_h2_2">en Afrique de l'Ouest</span>
-</h2>
-<p class="text-muted leading-relaxed mb-8" data-i18n="why_p">
+            <h2 class="font-syne text-4xl md:text-5xl font-black mb-6">
+              <span data-i18n="why_h2_1">Pionniers de l'IA</span><br /><span
+                data-i18n="why_h2_2"
+                >en Afrique de l'Ouest</span
+              >
+            </h2>
+            <p class="text-muted leading-relaxed mb-8" data-i18n="why_p">
               Expertise technique internationale combinée à une compréhension
               profonde des réalités africaines.
             </p>
-<div class="space-y-4">
-<div class="flex items-start gap-4">
-<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0">
-<i class="fas fa-check text-primary text-xs"></i>
-</div>
-<div>
-<div class="font-semibold mb-1" data-i18n="why_1_title">
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0"
+                >
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1" data-i18n="why_1_title">
                     Expertise Multilingue
                   </div>
-<div class="text-muted text-sm" data-i18n="why_1_desc">
+                  <div class="text-muted text-sm" data-i18n="why_1_desc">
                     Français, Anglais et Wolof.
                   </div>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0">
-<i class="fas fa-check text-primary text-xs"></i>
-</div>
-<div>
-<div class="font-semibold mb-1" data-i18n="why_2_title">
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0"
+                >
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1" data-i18n="why_2_title">
                     Solutions Sur Mesure
                   </div>
-<div class="text-muted text-sm" data-i18n="why_2_desc">
+                  <div class="text-muted text-sm" data-i18n="why_2_desc">
                     Chaque algorithme optimisé pour vos clients.
                   </div>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0">
-<i class="fas fa-check text-primary text-xs"></i>
-</div>
-<div>
-<div class="font-semibold mb-1" data-i18n="why_3_title">
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1 shrink-0"
+                >
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1" data-i18n="why_3_title">
                     Présence Internationale
                   </div>
-<div class="text-muted text-sm" data-i18n="why_3_desc">
+                  <div class="text-muted text-sm" data-i18n="why_3_desc">
                     Réseau de grands comptes au Sénégal et à l'international.
                   </div>
-</div>
-</div>
-</div>
-</div>
-<div class="reveal-right glass-card relative rounded-2xl border border-border bg-card overflow-hidden p-8">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-<div class="font-mono text-sm space-y-3">
-<div class="text-muted"># Pipeline IA EMIASN</div>
-<div>
-<span class="text-blue-400">import</span>
-<span class="text-primary">tensorflow</span>
-<span class="text-blue-400">as</span> tf
+                </div>
               </div>
-<div>
-<span class="text-blue-400">import</span>
-<span class="text-primary">pandas</span>
-<span class="text-blue-400">as</span> pd
+            </div>
+          </div>
+          <div
+            class="reveal-right glass-card relative rounded-2xl border border-border bg-card overflow-hidden p-8"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl"
+            ></div>
+            <div class="font-mono text-sm space-y-3">
+              <div class="text-muted"># Pipeline IA EMIASN</div>
+              <div>
+                <span class="text-blue-400">import</span>
+                <span class="text-primary">tensorflow</span>
+                <span class="text-blue-400">as</span> tf
               </div>
-<div>
-<span class="text-blue-400">import</span>
-<span class="text-primary">numpy</span>
-<span class="text-blue-400">as</span> np
+              <div>
+                <span class="text-blue-400">import</span>
+                <span class="text-primary">pandas</span>
+                <span class="text-blue-400">as</span> pd
               </div>
-<div class="text-muted"># Modèle Deep Learning</div>
-<div>
-<span class="text-yellow-400">model</span> =
+              <div>
+                <span class="text-blue-400">import</span>
+                <span class="text-primary">numpy</span>
+                <span class="text-blue-400">as</span> np
+              </div>
+              <div class="text-muted"># Modèle Deep Learning</div>
+              <div>
+                <span class="text-yellow-400">model</span> =
                 tf.keras.Sequential([
               </div>
-<div class="pl-4">
-                tf.keras.layers.<span class="text-green-400">Dense</span>(<span class="text-orange-400">128</span>, activation=<span class="text-secondary">'relu'</span>),
+              <div class="pl-4">
+                tf.keras.layers.<span class="text-green-400">Dense</span>(<span
+                  class="text-orange-400"
+                  >128</span
+                >, activation=<span class="text-secondary">'relu'</span>),
               </div>
-<div class="pl-4">
-                tf.keras.layers.<span class="text-green-400">Dropout</span>(<span class="text-orange-400">0.2</span>),
+              <div class="pl-4">
+                tf.keras.layers.<span class="text-green-400">Dropout</span
+                >(<span class="text-orange-400">0.2</span>),
               </div>
-<div class="pl-4">
-                tf.keras.layers.<span class="text-green-400">Dense</span>(<span class="text-orange-400">1</span>, activation=<span class="text-secondary">'sigmoid'</span>)
+              <div class="pl-4">
+                tf.keras.layers.<span class="text-green-400">Dense</span>(<span
+                  class="text-orange-400"
+                  >1</span
+                >, activation=<span class="text-secondary">'sigmoid'</span>)
               </div>
-<div>])</div>
-<div>
-<span class="text-muted"># Précision:</span>
-<span class="text-green-400">97.3%</span> ✓
+              <div>])</div>
+              <div>
+                <span class="text-muted"># Précision:</span>
+                <span class="text-green-400">97.3%</span> ✓
               </div>
-</div>
-</div>
-</div>
-</section>
-<!-- ── CLIENTS ── -->
-<section class="max-w-7xl mx-auto px-6 py-24">
-<p class="text-center text-muted text-sm font-mono mb-10 reveal-up" data-i18n="clients_label">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ── CLIENTS ── -->
+      <section class="max-w-7xl mx-auto px-6 py-24">
+        <p
+          class="text-center text-muted text-sm font-mono mb-10 reveal-up"
+          data-i18n="clients_label"
+        >
           // Ils nous font confiance
         </p>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger-grid">
-<div class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all">
-<span class="font-syne font-bold text-lg">Sonatel</span>
-</div>
-<div class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all">
-<span class="font-syne font-bold text-lg">CBAO Group</span>
-</div>
-<div class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all">
-<span class="font-syne font-bold text-lg">Air Sénégal</span>
-</div>
-<div class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all">
-<span class="font-syne font-bold text-lg">Ecobank</span>
-</div>
-</div>
-</section>
-<!-- ── CTA ── -->
-<section class="max-w-7xl mx-auto px-6 pb-24">
-<div class="reveal relative rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/5 p-12 text-center">
-<div class="absolute inset-0 grid-bg opacity-10"></div>
-<div class="orb orb-cyan" style="
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger-grid">
+          <div
+            class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all"
+          >
+            <span class="font-syne font-bold text-lg">Sonatel</span>
+          </div>
+          <div
+            class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all"
+          >
+            <span class="font-syne font-bold text-lg">CBAO Group</span>
+          </div>
+          <div
+            class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all"
+          >
+            <span class="font-syne font-bold text-lg">Air Sénégal</span>
+          </div>
+          <div
+            class="card-lift p-6 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted hover:text-white hover:border-primary/30 transition-all"
+          >
+            <span class="font-syne font-bold text-lg">Ecobank</span>
+          </div>
+        </div>
+      </section>
+      <!-- ── CTA ── -->
+      <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div
+          class="reveal relative rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/5 p-12 text-center"
+        >
+          <div class="absolute inset-0 grid-bg opacity-10"></div>
+          <div
+            class="orb orb-cyan"
+            style="
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
               width: 400px;
               height: 400px;
               opacity: 0.15;
-            "></div>
-<div class="relative z-10">
-<h2 class="font-syne text-3xl md:text-4xl font-black mb-4" data-i18n="cta_h2">
+            "
+          ></div>
+          <div class="relative z-10">
+            <h2
+              class="font-syne text-3xl md:text-4xl font-black mb-4"
+              data-i18n="cta_h2"
+            >
               Prêt à transformer vos données ?
             </h2>
-<p class="text-muted mb-8 max-w-xl mx-auto" data-i18n="cta_p">
+            <p class="text-muted mb-8 max-w-xl mx-auto" data-i18n="cta_p">
               Rejoignez les leaders qui font confiance à EMIASN pour leurs
               projets d'IA.
             </p>
-<a class="btn-primary btn-glow shine inline-flex items-center px-10 py-4 bg-primary text-dark font-bold rounded-xl text-sm gap-2" href="contact.html">
-<span data-i18n="cta_btn">Démarrer un Projet</span>
-<i class="fas fa-rocket"></i>
-</a>
-</div>
-</div>
-</section>
-</main>
-</body>
+            <a
+              class="btn-primary btn-glow shine inline-flex items-center px-10 py-4 bg-primary text-dark font-bold rounded-xl text-sm gap-2"
+              href="contact.html"
+            >
+              <span data-i18n="cta_btn">Démarrer un Projet</span>
+              <i class="fas fa-rocket"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

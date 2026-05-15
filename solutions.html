@@ -1,78 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Solutions – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
-        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
-      }}
-    }
-  </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="solutions">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
-<div class="mb-16 reveal-up">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="sol_label">// Nos Solutions</p>
-<h1 class="font-syne text-5xl md:text-6xl font-black mb-6" data-i18n="solutions_h1">
-<span data-i18n="sol_h1_1">Solutions IA</span><br/><span data-i18n="sol_h1_2">Sectorielles</span>
-</h1>
-<p class="text-muted text-lg max-w-2xl" data-i18n="sol_p">Solutions clé-en-main conçues pour répondre aux défis spécifiques de chaque secteur.</p>
-</div>
-<div class="flex flex-wrap gap-2 mb-12">
-<button class="sector-tab active px-5 py-2.5 rounded-xl text-sm font-medium border border-primary bg-primary/10 text-primary" data-i18n="sol_tab_fin" data-sector="finance">Finance &amp; Banque</button>
-<button class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted" data-i18n="sol_tab_tel" data-sector="telecom">Télécommunications</button>
-<button class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted" data-i18n="sol_tab_san" data-sector="sante">Santé</button>
-<button class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted" data-i18n="sol_tab_agri" data-sector="agri">Agriculture</button>
-<button class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted" data-i18n="sol_tab_com" data-sector="retail">Commerce</button>
-</div>
-<div>
-<div class="sector-panel grid md:grid-cols-3 gap-6" data-panel="finance">
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-shield-alt text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_finance_feat1">Détection de Fraude</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_finance_feat1_p">Modèles ML temps réel avec 99.2% de précision, réduisant les pertes de 70%.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-chart-line text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_finance_feat2">Scoring de Crédit IA</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_finance_feat2_p">Évaluation automatisée du risque crédit intégrant données alternatives.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-robot text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_finance_feat3">Assistant Financier IA</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_finance_feat3_p">Chatbot NLP multilingue FR/EN/Wolof pour clients bancaires 24h/24.</p></div>
-</div>
-<div class="sector-panel hidden grid md:grid-cols-3 gap-6" data-panel="telecom">
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-signal text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_tel_feat1">Prédiction de Churn</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_tel_feat1_p">Identification proactive des clients à risque de désabonnement.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-wifi text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_tel_feat2">Optimisation Réseau</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_tel_feat2_p">Gestion dynamique de la bande passante et prédiction des pannes.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-user-cog text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_tel_feat3">Personnalisation d'Offres</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_tel_feat3_p">Recommandations en temps réel selon les comportements d'usage.</p></div>
-</div>
-<div class="sector-panel hidden grid md:grid-cols-3 gap-6" data-panel="sante">
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-microscope text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_san_feat1">Diagnostic Assisté</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_san_feat1_p">Analyse d'imagerie médicale pour l'aide au diagnostic des maladies tropicales.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-heartbeat text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_san_feat2">Prédiction Épidémique</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_san_feat2_p">Modèles pour anticiper la propagation des épidémies.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-pills text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_san_feat3">Gestion des Stocks Pharma</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_san_feat3_p">Optimisation IA pour éviter les ruptures de médicaments essentiels.</p></div>
-</div>
-<div class="sector-panel hidden grid md:grid-cols-3 gap-6" data-panel="agri">
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-seedling text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_agri_tab">Agriculture de Précision</h3><p class="text-muted text-sm leading-relaxed">Analyse satellite et ML pour optimiser l'irrigation et prédire les rendements.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-bug text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_agri_feat2">Détection de Maladies</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_agri_feat2_p">Vision par ordinateur pour détecter les maladies des cultures via drones.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-cloud-sun-rain text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_agri_feat3">Prévision Météo IA</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_agri_feat3_p">Prévisions adaptées au contexte sahélien.</p></div>
-</div>
-<div class="sector-panel hidden grid md:grid-cols-3 gap-6" data-panel="retail">
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-shopping-cart text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_retail_feat1">Recommandation Produits</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_retail_feat1_p">Moteurs personnalisés augmentant panier moyen et fidélisation.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-boxes text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_retail_feat2">Gestion des Stocks</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_retail_feat2_p">Prédiction de la demande et optimisation automatique des niveaux.</p></div>
-<div class="p-6 rounded-2xl border border-border bg-card"><i class="fas fa-tags text-primary text-2xl mb-4"></i><h3 class="font-syne font-bold text-lg mb-2" data-i18n="sol_retail_feat3">Pricing Dynamique</h3><p class="text-muted text-sm leading-relaxed" data-i18n="sol_retail_feat3_p">Tarification dynamique pour maximiser la marge.</p></div>
-</div>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Solutions – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ["Syne", "sans-serif"],
+              grotesk: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#00E5FF",
+              secondary: "#FF6B35",
+              dark: "#030712",
+              card: "#0D1117",
+              border: "#1C2333",
+              muted: "#8B949E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-page="solutions"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+      <div class="mb-16 reveal-up">
+        <p class="text-primary font-mono text-sm mb-3" data-i18n="sol_label">
+          // Nos Solutions
+        </p>
+        <h1
+          class="font-syne text-5xl md:text-6xl font-black mb-6"
+          data-i18n="solutions_h1"
+        >
+          <span data-i18n="sol_h1_1">Solutions IA</span><br /><span
+            data-i18n="sol_h1_2"
+            >Sectorielles</span
+          >
+        </h1>
+        <p class="text-muted text-lg max-w-2xl" data-i18n="sol_p">
+          Solutions clé-en-main conçues pour répondre aux défis spécifiques de
+          chaque secteur.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-12">
+        <button
+          class="sector-tab active px-5 py-2.5 rounded-xl text-sm font-medium border border-primary bg-primary/10 text-primary"
+          data-i18n="sol_tab_fin"
+          data-sector="finance"
+        >
+          Finance &amp; Banque
+        </button>
+        <button
+          class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted"
+          data-i18n="sol_tab_tel"
+          data-sector="telecom"
+        >
+          Télécommunications
+        </button>
+        <button
+          class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted"
+          data-i18n="sol_tab_san"
+          data-sector="sante"
+        >
+          Santé
+        </button>
+        <button
+          class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted"
+          data-i18n="sol_tab_agri"
+          data-sector="agri"
+        >
+          Agriculture
+        </button>
+        <button
+          class="sector-tab px-5 py-2.5 rounded-xl text-sm font-medium border border-border text-muted"
+          data-i18n="sol_tab_com"
+          data-sector="retail"
+        >
+          Commerce
+        </button>
+      </div>
+      <div>
+        <div
+          class="sector-panel grid md:grid-cols-3 gap-6"
+          data-panel="finance"
+        >
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-shield-alt text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_finance_feat1"
+            >
+              Détection de Fraude
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_finance_feat1_p"
+            >
+              Modèles ML temps réel avec 99.2% de précision, réduisant les
+              pertes de 70%.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-chart-line text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_finance_feat2"
+            >
+              Scoring de Crédit IA
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_finance_feat2_p"
+            >
+              Évaluation automatisée du risque crédit intégrant données
+              alternatives.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-robot text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_finance_feat3"
+            >
+              Assistant Financier IA
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_finance_feat3_p"
+            >
+              Chatbot NLP multilingue FR/EN/Wolof pour clients bancaires 24h/24.
+            </p>
+          </div>
+        </div>
+        <div
+          class="sector-panel hidden grid md:grid-cols-3 gap-6"
+          data-panel="telecom"
+        >
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-signal text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_tel_feat1"
+            >
+              Prédiction de Churn
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_tel_feat1_p"
+            >
+              Identification proactive des clients à risque de désabonnement.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-wifi text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_tel_feat2"
+            >
+              Optimisation Réseau
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_tel_feat2_p"
+            >
+              Gestion dynamique de la bande passante et prédiction des pannes.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-user-cog text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_tel_feat3"
+            >
+              Personnalisation d'Offres
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_tel_feat3_p"
+            >
+              Recommandations en temps réel selon les comportements d'usage.
+            </p>
+          </div>
+        </div>
+        <div
+          class="sector-panel hidden grid md:grid-cols-3 gap-6"
+          data-panel="sante"
+        >
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-microscope text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_san_feat1"
+            >
+              Diagnostic Assisté
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_san_feat1_p"
+            >
+              Analyse d'imagerie médicale pour l'aide au diagnostic des maladies
+              tropicales.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-heartbeat text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_san_feat2"
+            >
+              Prédiction Épidémique
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_san_feat2_p"
+            >
+              Modèles pour anticiper la propagation des épidémies.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-pills text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_san_feat3"
+            >
+              Gestion des Stocks Pharma
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_san_feat3_p"
+            >
+              Optimisation IA pour éviter les ruptures de médicaments
+              essentiels.
+            </p>
+          </div>
+        </div>
+        <div
+          class="sector-panel hidden grid md:grid-cols-3 gap-6"
+          data-panel="agri"
+        >
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-seedling text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_agri_tab"
+            >
+              Agriculture de Précision
+            </h3>
+            <p class="text-muted text-sm leading-relaxed">
+              Analyse satellite et ML pour optimiser l'irrigation et prédire les
+              rendements.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-bug text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_agri_feat2"
+            >
+              Détection de Maladies
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_agri_feat2_p"
+            >
+              Vision par ordinateur pour détecter les maladies des cultures via
+              drones.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-cloud-sun-rain text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_agri_feat3"
+            >
+              Prévision Météo IA
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_agri_feat3_p"
+            >
+              Prévisions adaptées au contexte sahélien.
+            </p>
+          </div>
+        </div>
+        <div
+          class="sector-panel hidden grid md:grid-cols-3 gap-6"
+          data-panel="retail"
+        >
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-shopping-cart text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_retail_feat1"
+            >
+              Recommandation Produits
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_retail_feat1_p"
+            >
+              Moteurs personnalisés augmentant panier moyen et fidélisation.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-boxes text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_retail_feat2"
+            >
+              Gestion des Stocks
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_retail_feat2_p"
+            >
+              Prédiction de la demande et optimisation automatique des niveaux.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl border border-border bg-card">
+            <i class="fas fa-tags text-primary text-2xl mb-4"></i>
+            <h3
+              class="font-syne font-bold text-lg mb-2"
+              data-i18n="sol_retail_feat3"
+            >
+              Pricing Dynamique
+            </h3>
+            <p
+              class="text-muted text-sm leading-relaxed"
+              data-i18n="sol_retail_feat3_p"
+            >
+              Tarification dynamique pour maximiser la marge.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

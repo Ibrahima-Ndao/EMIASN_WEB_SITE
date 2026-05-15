@@ -1,75 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title data-i18n="testimonials_label">Témoignages – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
-        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
-      }}
-    }
-  </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="testimonials">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
-<div class="mb-16 reveal-up">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="test_label">// Témoignages</p>
-<h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
-<span data-i18n="test_h1_1">Ce que disent</span><br/><span data-i18n="test_h1_2">nos clients</span>
-</h1>
-</div>
-<div class="grid md:grid-cols-3 gap-6 stagger-grid">
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"EMIASN a transformé notre processus de détection de fraude. En 4 mois, nous avons réduit nos pertes de 73%. Équipe exceptionnelle et très professionnelle."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-sm">DK</div><div><div class="font-semibold text-sm">Directeur Konte</div><div class="text-muted text-xs">DSI, CBAO Group</div></div></div>
-</div>
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"Grâce au modèle de prédiction de churn d'EMIASN, nous économisons 2M€ par an. ROI exceptionnel et collaboration très fluide."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary text-sm">AF</div><div><div class="font-semibold text-sm">Aissatou Fall</div><div class="text-muted text-xs">VP Marketing, Sonatel</div></div></div>
-</div>
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"Le système de diagnostic IA analyse nos radiographies en 30 secondes avec 94% de précision. Un outil révolutionnaire pour notre radiologie."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-400/20 flex items-center justify-center font-bold text-blue-400 text-sm">DS</div><div><div class="font-semibold text-sm">Dr Sow</div><div class="text-muted text-xs">Chef Radiologie, HPD</div></div></div>
-</div>
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"Leur chatbot NLP en Wolof a révolutionné notre service client. Nos clients ruraux peuvent maintenant interagir dans leur langue. Impressionnant."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-green-400/20 flex items-center justify-center font-bold text-green-400 text-sm">MC</div><div><div class="font-semibold text-sm">Mamadou Coulibaly</div><div class="text-muted text-xs">DG, Microfinance West Africa</div></div></div>
-</div>
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"Le modèle de prévision des rendements agricoles a aidé des milliers d'agriculteurs à optimiser leurs cultures. Un impact social réel."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-orange-400/20 flex items-center justify-center font-bold text-orange-400 text-sm">ID</div><div><div class="font-semibold text-sm">Ibrahima Diop</div><div class="text-muted text-xs">Directeur, DAPSA Sénégal</div></div></div>
-</div>
-<div class="service-card p-8 rounded-2xl border border-border bg-card">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
-<p class="text-muted text-sm leading-relaxed mb-6">"Partenariat solide, équipe réactive et solutions robustes. EMIASN est clairement le leader de l'IA en Afrique de l'Ouest."</p>
-<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-purple-400/20 flex items-center justify-center font-bold text-purple-400 text-sm">LN</div><div><div class="font-semibold text-sm">Luc Ngom</div><div class="text-muted text-xs">CTO, Air Sénégal</div></div></div>
-</div>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title data-i18n="testimonials_label">Témoignages – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ["Syne", "sans-serif"],
+              grotesk: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#00E5FF",
+              secondary: "#FF6B35",
+              dark: "#030712",
+              card: "#0D1117",
+              border: "#1C2333",
+              muted: "#8B949E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-page="testimonials"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+      <div class="mb-16 reveal-up">
+        <p class="text-primary font-mono text-sm mb-3" data-i18n="test_label">
+          // Témoignages
+        </p>
+        <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+          <span data-i18n="test_h1_1">Ce que disent</span><br /><span
+            data-i18n="test_h1_2"
+            >nos clients</span
+          >
+        </h1>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 stagger-grid">
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "EMIASN a transformé notre processus de détection de fraude. En 4
+            mois, nous avons réduit nos pertes de 73%. Équipe exceptionnelle et
+            très professionnelle."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-sm"
+            >
+              DK
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Directeur Konte</div>
+              <div class="text-muted text-xs">DSI, CBAO Group</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "Grâce au modèle de prédiction de churn d'EMIASN, nous économisons
+            2M€ par an. ROI exceptionnel et collaboration très fluide."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary text-sm"
+            >
+              AF
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Aissatou Fall</div>
+              <div class="text-muted text-xs">VP Marketing, Sonatel</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "Le système de diagnostic IA analyse nos radiographies en 30
+            secondes avec 94% de précision. Un outil révolutionnaire pour notre
+            radiologie."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-400/20 flex items-center justify-center font-bold text-blue-400 text-sm"
+            >
+              DS
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Dr Sow</div>
+              <div class="text-muted text-xs">Chef Radiologie, HPD</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "Leur chatbot NLP en Wolof a révolutionné notre service client. Nos
+            clients ruraux peuvent maintenant interagir dans leur langue.
+            Impressionnant."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-green-400/20 flex items-center justify-center font-bold text-green-400 text-sm"
+            >
+              MC
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Mamadou Coulibaly</div>
+              <div class="text-muted text-xs">DG, Microfinance West Africa</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "Le modèle de prévision des rendements agricoles a aidé des milliers
+            d'agriculteurs à optimiser leurs cultures. Un impact social réel."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-orange-400/20 flex items-center justify-center font-bold text-orange-400 text-sm"
+            >
+              ID
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Ibrahima Diop</div>
+              <div class="text-muted text-xs">Directeur, DAPSA Sénégal</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card p-8 rounded-2xl border border-border bg-card">
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-muted text-sm leading-relaxed mb-6">
+            "Partenariat solide, équipe réactive et solutions robustes. EMIASN
+            est clairement le leader de l'IA en Afrique de l'Ouest."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-purple-400/20 flex items-center justify-center font-bold text-purple-400 text-sm"
+            >
+              LN
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Luc Ngom</div>
+              <div class="text-muted text-xs">CTO, Air Sénégal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

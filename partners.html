@@ -1,49 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title data-i18n="partners_label">Partenaires – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
-        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
-      }}
-    }
-  </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="partners">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
-<div class="mb-16 reveal-up">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="part_label">// Partenaires</p>
-<h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
-<span data-i18n="part_h1_1">Nos Partenaires</span><br/><span data-i18n="part_h1_2">Stratégiques</span>
-</h1>
-<p class="text-muted text-lg max-w-2xl" data-i18n="part_p">Un réseau d'alliances solides pour les meilleures solutions IA.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-6 stagger-grid">
-<div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">🎓</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="partners_univ_title">Universités Partenaires</h3><p class="text-muted text-sm mb-4">ESP Dakar, UCAD, École Polytechnique Paris, MIT Media Lab</p><span class="text-primary text-sm font-mono" data-i18n="partners_rd_title">R&amp;D &amp; Recherche Fondamentale</span></div>
-<div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">☁️</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="partners_cloud_title">Cloud &amp; Infrastructure</h3><p class="text-muted text-sm mb-4">Google Cloud Partner, AWS Advanced Partner, Microsoft Azure</p><span class="text-primary text-sm font-mono">Infrastructure &amp; MLOps</span></div>
-<div class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"><div class="text-4xl mb-4">🌍</div><h3 class="font-syne font-bold text-xl mb-2" data-i18n="partners_org_title">Organisations</h3><p class="text-muted text-sm mb-4">Smart Africa Alliance, GSMA, Banque Africaine de Développement</p><span class="text-primary text-sm font-mono" data-i18n="partners_org_tag">Impact &amp; Développement</span></div>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title data-i18n="partners_label">Partenaires – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ["Syne", "sans-serif"],
+              grotesk: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#00E5FF",
+              secondary: "#FF6B35",
+              dark: "#030712",
+              card: "#0D1117",
+              border: "#1C2333",
+              muted: "#8B949E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-page="partners"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <main class="pt-28 max-w-7xl mx-auto px-6 pb-24">
+      <div class="mb-16 reveal-up">
+        <p class="text-primary font-mono text-sm mb-3" data-i18n="part_label">
+          // Partenaires
+        </p>
+        <h1 class="font-syne text-5xl md:text-6xl font-black mb-6">
+          <span data-i18n="part_h1_1">Nos Partenaires</span><br /><span
+            data-i18n="part_h1_2"
+            >Stratégiques</span
+          >
+        </h1>
+        <p class="text-muted text-lg max-w-2xl" data-i18n="part_p">
+          Un réseau d'alliances solides pour les meilleures solutions IA.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 stagger-grid">
+        <div
+          class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"
+        >
+          <div class="text-4xl mb-4">🎓</div>
+          <h3
+            class="font-syne font-bold text-xl mb-2"
+            data-i18n="partners_univ_title"
+          >
+            Universités Partenaires
+          </h3>
+          <p class="text-muted text-sm mb-4">
+            ESP Dakar, UCAD, École Polytechnique Paris, MIT Media Lab
+          </p>
+          <span
+            class="text-primary text-sm font-mono"
+            data-i18n="partners_rd_title"
+            >R&amp;D &amp; Recherche Fondamentale</span
+          >
+        </div>
+        <div
+          class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"
+        >
+          <div class="text-4xl mb-4">☁️</div>
+          <h3
+            class="font-syne font-bold text-xl mb-2"
+            data-i18n="partners_cloud_title"
+          >
+            Cloud &amp; Infrastructure
+          </h3>
+          <p class="text-muted text-sm mb-4">
+            Google Cloud Partner, AWS Advanced Partner, Microsoft Azure
+          </p>
+          <span class="text-primary text-sm font-mono"
+            >Infrastructure &amp; MLOps</span
+          >
+        </div>
+        <div
+          class="p-8 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-all"
+        >
+          <div class="text-4xl mb-4">🌍</div>
+          <h3
+            class="font-syne font-bold text-xl mb-2"
+            data-i18n="partners_org_title"
+          >
+            Organisations
+          </h3>
+          <p class="text-muted text-sm mb-4">
+            Smart Africa Alliance, GSMA, Banque Africaine de Développement
+          </p>
+          <span
+            class="text-primary text-sm font-mono"
+            data-i18n="partners_org_tag"
+            >Impact &amp; Développement</span
+          >
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

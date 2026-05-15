@@ -1,88 +1,266 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title data-i18n="apply_label">Candidature – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
-        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
-      }}
-    }
-  </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="apply">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<main class="pt-28 max-w-3xl mx-auto px-6 pb-24">
-<a class="flex items-center gap-2 text-muted hover:text-primary transition-colors text-sm mb-8" href="careers.html">
-<i class="fas fa-arrow-left"></i> <span data-i18n="apply_back">Retour aux offres</span>
-</a>
-<div class="mb-10 reveal-up">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="apply_label">// Candidature</p>
-<h1 class="font-syne text-4xl font-black mb-3" data-i18n="apply_h1">Postuler chez EMIASN</h1>
-<p class="text-muted" data-i18n="apply_p">Notre équipe RH vous contactera sous 72h.</p>
-</div>
-<div class="glass-card p-8 rounded-2xl border border-border bg-card">
-<div class="space-y-6">
-<!-- Honeypot anti-spam -->
-<div style="display:none!important" aria-hidden="true">
-<input id="apply-honeypot" name="website" tabindex="-1" autocomplete="off" type="text"/>
-</div>
-<div class="grid md:grid-cols-2 gap-4">
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_fname">Prénom *</label><input autocomplete="given-name" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" maxlength="100" placeholder="Votre prénom" required type="text"/></div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_lname">Nom *</label><input autocomplete="family-name" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" maxlength="100" placeholder="Votre nom" required type="text"/></div>
-</div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_email">Email *</label><input autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" maxlength="254" placeholder="votre@email.com" required type="email"/></div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_phone">Téléphone</label><input autocomplete="tel" class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm" maxlength="30" pattern="[\+\d\s\-\(\)]{6,30}" placeholder="+221 77 000 00 00" type="tel"/></div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_position">Poste souhaité *</label>
-<select class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm">
-<option value="">Sélectionner un poste</option>
-<option>Stagiaire Data Science</option><option>Senior ML Engineer</option><option>NLP Research Scientist</option><option>Data Engineer</option>
-</select>
-</div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_level">Niveau d'études *</label>
-<select class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm">
-<option data-i18n="select_level" value="">Sélectionner</option><option>Bac+4</option><option>Bac+5 (Master)</option><option>Doctorat</option>
-</select>
-</div>
-<div><label class="block text-sm font-medium mb-2" data-i18n="apply_letter">Lettre de motivation *</label><textarea class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm resize-none" maxlength="5000" placeholder="Décrivez votre motivation et vos compétences (Python, NumPy, Pandas, etc.)..." required rows="5"></textarea></div>
-<div>
-<label class="block text-sm font-medium mb-3" data-i18n="apply_skills">Compétences techniques *</label>
-<div class="grid grid-cols-3 gap-2">
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Python</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> NumPy</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Pandas</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Matplotlib</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Scikit-Learn</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> TensorFlow</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Keras</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> Seaborn</label>
-<label class="flex items-center gap-2 text-sm text-muted cursor-pointer"><input class="accent-primary" type="checkbox"/> PyTorch</label>
-</div>
-</div>
-<button class="w-full py-4 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all text-sm" onclick="if(isBot('apply-honeypot')||!canSubmit('apply'))return; this.disabled=true; this.classList.add('opacity-70'); showToast(t('apply_toast')); setTimeout(()=>{this.disabled=false;this.classList.remove('opacity-70');},5000)">
-<span data-i18n="apply_btn">Soumettre ma Candidature</span> <i class="fas fa-paper-plane ml-2"></i>
-</button>
-</div>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title data-i18n="apply_label">Candidature – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ["Syne", "sans-serif"],
+              grotesk: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#00E5FF",
+              secondary: "#FF6B35",
+              dark: "#030712",
+              card: "#0D1117",
+              border: "#1C2333",
+              muted: "#8B949E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-page="apply"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <main class="pt-28 max-w-3xl mx-auto px-6 pb-24">
+      <a
+        class="flex items-center gap-2 text-muted hover:text-primary transition-colors text-sm mb-8"
+        href="careers.html"
+      >
+        <i class="fas fa-arrow-left"></i>
+        <span data-i18n="apply_back">Retour aux offres</span>
+      </a>
+      <div class="mb-10 reveal-up">
+        <p class="text-primary font-mono text-sm mb-3" data-i18n="apply_label">
+          // Candidature
+        </p>
+        <h1 class="font-syne text-4xl font-black mb-3" data-i18n="apply_h1">
+          Postuler chez EMIASN
+        </h1>
+        <p class="text-muted" data-i18n="apply_p">
+          Notre équipe RH vous contactera sous 72h.
+        </p>
+      </div>
+      <div class="glass-card p-8 rounded-2xl border border-border bg-card">
+        <div class="space-y-6">
+          <!-- Honeypot anti-spam -->
+          <div style="display: none !important" aria-hidden="true">
+            <input
+              id="apply-honeypot"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              type="text"
+            />
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block text-sm font-medium mb-2"
+                data-i18n="apply_fname"
+                >Prénom *</label
+              ><input
+                autocomplete="given-name"
+                class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm"
+                maxlength="100"
+                placeholder="Votre prénom"
+                required
+                type="text"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium mb-2"
+                data-i18n="apply_lname"
+                >Nom *</label
+              ><input
+                autocomplete="family-name"
+                class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm"
+                maxlength="100"
+                placeholder="Votre nom"
+                required
+                type="text"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              data-i18n="apply_email"
+              >Email *</label
+            ><input
+              autocomplete="email"
+              class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm"
+              maxlength="254"
+              placeholder="votre@email.com"
+              required
+              type="email"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              data-i18n="apply_phone"
+              >Téléphone</label
+            ><input
+              autocomplete="tel"
+              class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm"
+              maxlength="30"
+              pattern="[\+\d\s\-\(\)]{6,30}"
+              placeholder="+221 77 000 00 00"
+              type="tel"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              data-i18n="apply_position"
+              >Poste souhaité *</label
+            >
+            <select
+              class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm"
+            >
+              <option value="">Sélectionner un poste</option>
+              <option>Stagiaire Data Science</option>
+              <option>Senior ML Engineer</option>
+              <option>NLP Research Scientist</option>
+              <option>Data Engineer</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              data-i18n="apply_level"
+              >Niveau d'études *</label
+            >
+            <select
+              class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white focus:outline-none focus:border-primary transition-colors text-sm"
+            >
+              <option data-i18n="select_level" value="">Sélectionner</option>
+              <option>Bac+4</option>
+              <option>Bac+5 (Master)</option>
+              <option>Doctorat</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              data-i18n="apply_letter"
+              >Lettre de motivation *</label
+            ><textarea
+              class="w-full px-4 py-3 rounded-xl border border-border bg-dark/50 text-white placeholder-muted focus:outline-none focus:border-primary transition-colors text-sm resize-none"
+              maxlength="5000"
+              placeholder="Décrivez votre motivation et vos compétences (Python, NumPy, Pandas, etc.)..."
+              required
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-3"
+              data-i18n="apply_skills"
+              >Compétences techniques *</label
+            >
+            <div class="grid grid-cols-3 gap-2">
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> Python</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> NumPy</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> Pandas</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" />
+                Matplotlib</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" />
+                Scikit-Learn</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" />
+                TensorFlow</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> Keras</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> Seaborn</label
+              >
+              <label
+                class="flex items-center gap-2 text-sm text-muted cursor-pointer"
+                ><input class="accent-primary" type="checkbox" /> PyTorch</label
+              >
+            </div>
+          </div>
+          <button
+            class="w-full py-4 bg-primary text-dark font-bold rounded-xl hover:bg-cyan-300 transition-all text-sm"
+            onclick="
+              if (isBot('apply-honeypot') || !canSubmit('apply')) return;
+              this.disabled = true;
+              this.classList.add('opacity-70');
+              showToast(t('apply_toast'));
+              setTimeout(() => {
+                this.disabled = false;
+                this.classList.remove('opacity-70');
+              }, 5000);
+            "
+          >
+            <span data-i18n="apply_btn">Soumettre ma Candidature</span>
+            <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,68 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="DENY"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>FAQ – EMIASN</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
-<link rel="apple-touch-icon" href="favicon-192.png"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: { syne:['Syne','sans-serif'], grotesk:['Plus Jakarta Sans','sans-serif'], mono:['JetBrains Mono','monospace'] },
-        colors: { primary:'#00E5FF', secondary:'#FF6B35', dark:'#030712', card:'#0D1117', border:'#1C2333', muted:'#8B949E' }
-      }}
-    }
-  </script>
-</head>
-<body class="bg-dark text-white font-grotesk overflow-x-hidden" data-page="faq">
-<script src="components.js"></script>
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-<main class="pt-28 max-w-3xl mx-auto px-6 pb-24">
-<div class="mb-16 reveal-up">
-<p class="text-primary font-mono text-sm mb-3" data-i18n="faq_label">// FAQ</p>
-<h1 class="font-syne text-5xl font-black mb-6" data-i18n="faq_h1">Questions Fréquentes</h1>
-<p class="text-muted text-lg" data-i18n="faq_p">Tout ce que vous devez savoir sur EMIASN.</p>
-</div>
-<div class="space-y-3">
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q1">Quels types d'entreprises travaillent avec EMIASN ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a1">Grands Comptes : banques, télécoms, santé, agriculture, commerce. Clients au Sénégal, Côte d'Ivoire, Mali et France.</span></p></div>
-</div>
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q2">Combien de temps dure un projet IA typique ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a2">POC : 4-8 semaines. Déploiement complet : 4 à 12 mois. Sprints agiles avec livrables intermédiaires réguliers.</span></p></div>
-</div>
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q3">Proposez-vous des formations en IA ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a3">Oui ! Formations Python, ML, DL et Data Science adaptées aux niveaux débutant à avancé. Dispensées dans vos locaux ou à Dakar.</span></p></div>
-</div>
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q4">Mes données sont-elles protégées ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a4">Absolument. Conformité RGPD et loi sénégalaise sur les données personnelles. NDA sur chaque projet. Données jamais partagées.</span></p></div>
-</div>
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q5">Comment postuler pour un stage ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a5">(1) Dossier en ligne, (2) Présélection CV/LM, (3) Test technique Python/ML, (4) Entretien technique, (5) Entretien RH. Processus de 2-3 semaines.</span></p></div>
-</div>
-<div class="faq-item rounded-2xl border border-border bg-card overflow-hidden">
-<button class="w-full p-6 text-left flex items-center justify-between" onclick="toggleFaq(this)"><span class="font-semibold"><span data-i18n="faq_q6">Travaillez-vous à l'international ?</span></span><i class="fas fa-plus text-primary transition-transform duration-300"></i></button>
-<div class="faq-answer hidden px-6 pb-6"><p class="text-muted text-sm leading-relaxed"><span data-i18n="faq_a6">Oui, bureaux à Dakar, Abidjan, Bamako et Paris. Nos équipes opèrent en remote pour des clients en Europe, Asie et Amérique du Nord.</span></p></div>
-</div>
-</div>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; img-src 'self' data: blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FAQ – EMIASN</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="favicon-192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Syne:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ["Syne", "sans-serif"],
+              grotesk: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#00E5FF",
+              secondary: "#FF6B35",
+              dark: "#030712",
+              card: "#0D1117",
+              border: "#1C2333",
+              muted: "#8B949E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-dark text-white font-grotesk overflow-x-hidden"
+    data-page="faq"
+  >
+    <script src="components.js"></script>
+    <!-- Custom cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <main class="pt-28 max-w-3xl mx-auto px-6 pb-24">
+      <div class="mb-16 reveal-up">
+        <p class="text-primary font-mono text-sm mb-3" data-i18n="faq_label">
+          // FAQ
+        </p>
+        <h1 class="font-syne text-5xl font-black mb-6" data-i18n="faq_h1">
+          Questions Fréquentes
+        </h1>
+        <p class="text-muted text-lg" data-i18n="faq_p">
+          Tout ce que vous devez savoir sur EMIASN.
+        </p>
+      </div>
+      <div class="space-y-3">
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q1"
+                >Quels types d'entreprises travaillent avec EMIASN ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a1"
+                >Grands Comptes : banques, télécoms, santé, agriculture,
+                commerce. Clients au Sénégal, Côte d'Ivoire, Mali et
+                France.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q2"
+                >Combien de temps dure un projet IA typique ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a2"
+                >POC : 4-8 semaines. Déploiement complet : 4 à 12 mois. Sprints
+                agiles avec livrables intermédiaires réguliers.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q3"
+                >Proposez-vous des formations en IA ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a3"
+                >Oui ! Formations Python, ML, DL et Data Science adaptées aux
+                niveaux débutant à avancé. Dispensées dans vos locaux ou à
+                Dakar.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q4"
+                >Mes données sont-elles protégées ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a4"
+                >Absolument. Conformité RGPD et loi sénégalaise sur les données
+                personnelles. NDA sur chaque projet. Données jamais
+                partagées.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q5"
+                >Comment postuler pour un stage ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a5"
+                >(1) Dossier en ligne, (2) Présélection CV/LM, (3) Test
+                technique Python/ML, (4) Entretien technique, (5) Entretien RH.
+                Processus de 2-3 semaines.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="faq-item rounded-2xl border border-border bg-card overflow-hidden"
+        >
+          <button
+            class="w-full p-6 text-left flex items-center justify-between"
+            onclick="toggleFaq(this)"
+          >
+            <span class="font-semibold"
+              ><span data-i18n="faq_q6"
+                >Travaillez-vous à l'international ?</span
+              ></span
+            ><i
+              class="fas fa-plus text-primary transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-muted text-sm leading-relaxed">
+              <span data-i18n="faq_a6"
+                >Oui, bureaux à Dakar, Abidjan, Bamako et Paris. Nos équipes
+                opèrent en remote pour des clients en Europe, Asie et Amérique
+                du Nord.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
